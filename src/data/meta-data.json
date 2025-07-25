@@ -95,11 +95,11 @@
     "nutrients": { "carbs": 0, "protein": 0, "fat": 100 },
     "funFact": "Sunflower oil is rich in vitamin E antioxidants."
   },
-  "Flaxseed Oil": {
+  "Walnuts": {
     "group": "fats",
-    "calories": 884,
-    "nutrients": { "carbs": 0, "protein": 0, "fat": 100 },
-    "funFact": "Flaxseed oil is one of the richest plant sources of omega‑3 ALA."
+    "calories": 654,
+    "nutrients": { "carbs": 13.7, "protein": 15.2, "fat": 65.2 },
+    "funFact": "Walnuts are one of the richest plant sources of omega‑3 ALA and support brain health."
   },
   "Coconut Oil": {
     "group": "fats",
