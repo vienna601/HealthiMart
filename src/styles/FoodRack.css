@@ -1,0 +1,41 @@
+/* Container for the whole rack */
+.food-rack-page {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+/* Cabinet background image */
+.cabinet-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
+}
+/* shared shelf‑row styling */
+.shelf-row {
+  position: absolute;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  width: 100%;
+  padding: 0 16px;
+  box-sizing: border-box;
+  z-index: 1;
+}
+/* Individual row positions, tweak later*/
+.shelf-row--0 {
+  top: 12%;
+} /* top shelf: fruits/veg */
+.shelf-row--1 {
+  top: 45%;
+} /* middle shelf: proteins/dairy */
+.shelf-row--2 {
+  top: 78%;
+} /* bottom shelf: grains/misc */

@@ -1,35 +1,42 @@
 import { useMemo } from "react";
-import { getItemsByGroup } from "../data/food‑items.js";
-import FoodItemCard from "../components/FoodItemCard.jsx";
+import { Link } from "react-router-dom";
 import { useMealContext } from "../context/MealContext.jsx";
+import { getItemsByGroup } from "../data/food-items.js";
 import { chunkArray } from "../utils/storage.js";
+import FoodItemCard from "../components/FoodItemCard.jsx";
 
 export default function FoodRack() {
-  const { selectedGroup } = useMealContext();
+  const { selectedGroup, basket } = useMealContext();
 
-  // filter + chunk into rows of 4 (or 3) items
+  //only recompute when the group changes
   const rows = useMemo(() => {
-    const groupItems = getItemsByGroup(selectedGroup);
-    return chunkArray(groupItems, 4); // e.g. [[item,…],[…],[…]]
+    //error with group selection
+    if (!selectedGroup) return [];
+    return chunkArray(getItemsByGroup(selectedGroup), 3);
   }, [selectedGroup]);
 
   return (
     <div className="food-rack-page">
-      {/* background */}
+      {/* Cabinet background */}
       <img
         src="../assets/images/cabinet.png"
         alt="Open cabinet"
         className="cabinet-bg"
       />
 
-      {/* shelves */}
-      {rows.map((row, i) => (
-        <div key={i} className={`shelf-row shelf-row--${i}`}>
-          {row.map((item) => (
+      {/* Each shelf is a row of up to 3 cards */}
+      {rows.map((rowItems, rowIndex) => (
+        <div key={rowIndex} className={`shelf-row shelf-row--${rowIndex}`}>
+          {rowItems.map((item) => (
             <FoodItemCard key={item.id} item={item} />
           ))}
         </div>
       ))}
+
+      {/* Basket button */}
+      <Button to="/basket" icon="arrow" className="basket-button">
+        Basket ({basket.length})
+      </Button>
     </div>
   );
 }

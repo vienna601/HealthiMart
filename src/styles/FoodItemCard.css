@@ -1,0 +1,58 @@
+/* food item card */
+.food-item-card {
+  position: relative;
+  width: 256px; /* base size for 8‑item rack */
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 2; /*hover*/
+}
+
+.food-item-card__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.food-item-card__info {
+  padding: 8px;
+  border-top: 1px solid #eee;
+  text-align: center;
+}
+
+.food-item-card__name {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.food-item-card__calories {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.food-item-card__popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 220px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+
+.popup__title {
+  margin: 8px 0 4px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.popup__text {
+  margin: 0 0 8px;
+  font-size: 0.85rem;
+  color: #333;
+}
