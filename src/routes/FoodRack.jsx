@@ -4,6 +4,7 @@ import { useMealContext } from "../context/MealContext.jsx";
 import { getItemsByGroup } from "../data/food-items.js";
 import { chunkArray } from "../utils/storage.js";
 import FoodItemCard from "../components/FoodItemCard.jsx";
+import "../styles/FoodRack.css";
 
 export default function FoodRack() {
   const { selectedGroup, basket } = useMealContext();
@@ -19,7 +20,7 @@ export default function FoodRack() {
     <div className="food-rack-page">
       {/* Cabinet background */}
       <img
-        src="../assets/images/cabinet.png"
+        src="../assets/images/food/cabinet.png"
         alt="Open cabinet"
         className="cabinet-bg"
       />

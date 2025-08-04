@@ -1,0 +1,34 @@
+.nutrient-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nutrient-list__item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+}
+
+.nutrient-list__label {
+  font-weight: 500;
+}
+
+/* default text color */
+.nutrient-list__value {
+  color: black;
+}
+
+/* Color-coding based on ratio (using classes) */
+.nutrient-list__item--high .nutrient-list__value {
+  color: #16a34a; /* green for ≥100% RDI */
+}
+
+.nutrient-list__item--medium .nutrient-list__value {
+  color: #d97706; /* amber for 50–99% */
+}
+
+.nutrient-list__item--low .nutrient-list__value {
+  color: #dc2626; /* red for <50% */
+}

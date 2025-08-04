@@ -16,7 +16,8 @@ const MealContext = createContext();
 //inside that component
 export function MealProvider({ children }) {
   //for updating current grp in food rack and array of objects in basket
-  const [selectedGroup, setSelectedGroup] = useState(null);
+  //TODO: revert default state to null later
+  const [selectedGroup, setSelectedGroup] = useState("fruits");
   //get items from local storage
   const [basket, setBasket] = useState(() => loadBasket());
   //use basket dependency, save changes made to basket
@@ -58,10 +59,10 @@ export function MealProvider({ children }) {
       addItem,
       removeItem,
       clearBasket,
-      nutritionSummary,
+      nutritionTotal,
     }),
     // if any dependencies change, re‑render
-    [selectedGroup, basket, nutritionSummary]
+    [selectedGroup, basket, nutritionTotal]
   );
 
   return <MealContext.Provider value={value}>{children}</MealContext.Provider>;

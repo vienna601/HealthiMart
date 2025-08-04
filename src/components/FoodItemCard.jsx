@@ -1,11 +1,12 @@
-import { useState, useContext } from "react";
-import { MealContext } from "../context/MealContext.jsx";
+import { useState } from "react";
+import { useMealContext } from "../context/MealContext.jsx";
 import NutrientList from "./NutrientList.jsx";
+import "../styles/NutrientList.css";
 import { compareToRDI } from "../utils/nutrientHelpers.js";
 
 //TODO: rough outline, refine in conjunction with css for popup styling
 export default function FoodItemCard({ item }) {
-  const { addItem } = useContext(MealContext);
+  const { addItem } = useMealContext;
   const [showInfo, setShowInfo] = useState(false);
 
   return (
