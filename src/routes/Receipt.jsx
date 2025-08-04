@@ -5,7 +5,7 @@ import { useNutritionCalc } from "../hooks/useNutritionCalc.js"; // :contentRefe
 import { compareToRDI, formatNutrients } from "../utils/nutrientHelpers.js"; // :contentReference[oaicite:5]{index=5}
 import StarRating from "../components/StarRating.jsx";
 import Button from "../components/Button.jsx";
-import "./Receipt.css";
+import "../styles/Receipt.css";
 
 export default function Receipt() {
   const navigate = useNavigate();

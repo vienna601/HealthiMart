@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "../styles/Button.css";
 
@@ -49,13 +48,3 @@ export default function Button({
     </button>
   );
 }
-
-Button.propTypes = {
-  children: PropTypes.node.isRequired,
-  to: PropTypes.string,
-  onClick: PropTypes.func,
-  type: PropTypes.oneOf(["button", "submit", "reset"]),
-  disabled: PropTypes.bool,
-  className: PropTypes.string,
-  icon: PropTypes.oneOf(["arrow", "close"]),
-};
