@@ -12,9 +12,7 @@ export const items = Object.entries(foodMetadata).map(([name, meta], i) => ({
   funFact: meta.funFact,
   //e.g. Brown Rice -> brown-rice.png
   //all images are 256x256 pixels
-  imageUrl: `../assets/images/food/${name
-    .toLowerCase()
-    .replace(/\s+/g, "-")}.png`,
+  imageUrl: `/assets/images/${name.toLowerCase().replace(/\s+/g, "-")}.png`,
 }));
 
 //helper function for sorting by group

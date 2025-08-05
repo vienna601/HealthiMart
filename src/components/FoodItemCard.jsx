@@ -21,6 +21,7 @@ export default function FoodItemCard({ item }) {
         src={item.imageUrl}
         alt={item.name}
         className="food-item-card__img"
+        style={{ width: 128, height: 128, objectFit: "contain" }}
       />
 
       {/* 2. Overlay name & calories */}

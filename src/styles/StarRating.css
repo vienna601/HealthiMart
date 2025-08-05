@@ -1,0 +1,14 @@
+.star-rating {
+  display: inline-flex;
+  gap: 4px;
+  font-size: 1.25rem; /* adjust size as needed */
+}
+
+.star {
+  color: #cbd5e0; /* gray-400 for empty */
+  transition: color 0.2s;
+}
+
+.star--filled {
+  color: #facc15; /* yellow-400 for filled */
+}

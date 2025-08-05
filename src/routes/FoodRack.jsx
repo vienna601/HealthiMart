@@ -1,9 +1,9 @@
 import { useMemo } from "react";
-import { Link } from "react-router-dom";
 import { useMealContext } from "../context/MealContext.jsx";
 import { getItemsByGroup } from "../data/food-items.js";
 import { chunkArray } from "../utils/storage.js";
 import FoodItemCard from "../components/FoodItemCard.jsx";
+import Button from "../components/Button.jsx";
 import "../styles/FoodRack.css";
 
 export default function FoodRack() {
@@ -13,6 +13,7 @@ export default function FoodRack() {
   const rows = useMemo(() => {
     //error with group selection
     if (!selectedGroup) return [];
+    //split items into 3 rows
     return chunkArray(getItemsByGroup(selectedGroup), 3);
   }, [selectedGroup]);
 
@@ -20,8 +21,8 @@ export default function FoodRack() {
     <div className="food-rack-page">
       {/* Cabinet background */}
       <img
-        src="../assets/images/food/cabinet.png"
-        alt="Open cabinet"
+        src="/assets/images/cabinet.png"
+        alt="cabinet"
         className="cabinet-bg"
       />
 

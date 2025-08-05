@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { formatGrams } from "../utils/nutrientHelpers.js";
 import "../styles/NutrientList.css";
 
@@ -33,3 +34,14 @@ export default function NutrientList({ nutrients, compareFn }) {
     </ul>
   );
 }
+
+NutrientList.propTypes = {
+  /** e.g. { carbs: 20, protein: 5, fat: 3 } */
+  nutrients: PropTypes.shape({
+    carbs: PropTypes.number,
+    protein: PropTypes.number,
+    fat: PropTypes.number,
+  }).isRequired,
+  /** function that returns ratios by key (e.g. compareToRDI) */
+  compareFn: PropTypes.func,
+};

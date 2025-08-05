@@ -8,7 +8,6 @@ import Button from "../components/Button.jsx";
 import "../styles/Receipt.css";
 
 export default function Receipt() {
-  const navigate = useNavigate();
   const { basket } = useMealContext();
 
   // 1. Compute overall nutrition summary
