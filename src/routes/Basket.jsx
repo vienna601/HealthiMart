@@ -74,7 +74,10 @@ export default function Basket() {
             <strong>Fat:</strong> {macros.fat.toFixed(1)} g
           </p>
         </div>
-        <Button onClick={clearBasket}>Confirm</Button>
+        <Button onClick={clearBasket}>Clear</Button>
+        <Button to="/receipt" icon="arrow">
+          Checkout
+        </Button>
       </footer>
     </div>
   );

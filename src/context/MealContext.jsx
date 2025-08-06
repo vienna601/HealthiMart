@@ -48,7 +48,7 @@ export function MealProvider({ children }) {
   };
 
   //get the total with custom hook
-  const nutritionTotal = useNutritionCalc(basket);
+  const nutritionSummary = useNutritionCalc(basket);
 
   //memoize the provider values to avoid unnecessary re‑renders
   const value = useMemo(
@@ -59,10 +59,10 @@ export function MealProvider({ children }) {
       addItem,
       removeItem,
       clearBasket,
-      nutritionTotal,
+      nutritionSummary,
     }),
     // if any dependencies change, re‑render
-    [selectedGroup, basket, nutritionTotal]
+    [selectedGroup, basket, nutritionSummary]
   );
 
   return <MealContext.Provider value={value}>{children}</MealContext.Provider>;

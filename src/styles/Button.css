@@ -40,7 +40,7 @@
   line-height: 1;
 }
 
-/* Specific sizes for “basket” link if needed */
+/* position for basket button */
 .btn.basket-button {
   position: absolute;
   bottom: 24px;

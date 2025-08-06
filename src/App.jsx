@@ -1,11 +1,15 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import FoodRack from "./routes/FoodRack.jsx";
+import Basket from "./routes/Basket.jsx";
+import Receipt from "./routes/Receipt.jsx";
 
 export default function App() {
   return (
     <Routes>
       <Route path="/" element={<FoodRack />} />
+      <Route path="/basket" element={<Basket />} />
+      <Route path="/receipt" element={<Receipt />} />
     </Routes>
   );
 }
