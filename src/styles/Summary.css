@@ -1,0 +1,82 @@
+/* src/styles/Summary.css */
+.summary-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #f9f9f9;
+  position: relative;
+}
+
+/* Header */
+.summary-header {
+  text-align: center;
+  padding: 2rem;
+  background: #fff;
+  border-bottom: 1px solid #e2e8f0;
+}
+.summary-title {
+  margin: 0;
+  font-size: 2.5rem;
+}
+.summary-calories {
+  display: block;
+  font-size: 1rem;
+  color: #667085;
+  margin-top: 0.5rem;
+}
+
+/* Content */
+.summary-content {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column; /* Stack feedback and receipt vertically */
+  align-items: center;
+  gap: 2rem;
+}
+
+.summary-feedback {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 600px; /* Limit width for readability */
+  text-align: center;
+}
+
+.feedback-message-bad {
+  color: #dc2626; /* Red for excess */
+  font-weight: 500;
+}
+.feedback-message-good {
+  color: #d97706; /* Amber for deficit */
+  font-weight: 500;
+}
+.feedback-message-great {
+  color: #16a34a; /* Green for balanced */
+  font-weight: 500;
+}
+
+.summary-receipt-view {
+  width: 100%;
+  max-width: 300px; /* Max width for the nutrition facts image */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.summary-nutrition-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Footer */
+.summary-footer {
+  padding: 1rem 2rem;
+  background: #fff;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: center;
+}

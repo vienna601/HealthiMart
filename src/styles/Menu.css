@@ -1,0 +1,55 @@
+/* src/styles/Menu.css */
+.menu-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f9f9f9; /* Fallback background */
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-cabinet-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0; /* Background layer */
+  pointer-events: none; /* Allows clicks to pass through to elements above */
+}
+
+.menu-header {
+  position: relative; /* Position above the cabinet background */
+  z-index: 1;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333; /* Darker text for readability against the cabinet */
+}
+
+.menu-title {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.menu-subtitle {
+  font-size: 1rem;
+  color: #667085;
+}
+
+.menu-proceed-btn {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  z-index: 2; /* Ensure button is on top */
+}
+
+/* Adjust basket button position if needed, as it might conflict with menu-proceed-btn */
+.basket-button {
+  position: absolute;
+  bottom: 24px;
+  left: 24px; /* Position on the left to avoid conflict */
+  z-index: 2;
+}

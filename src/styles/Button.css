@@ -1,31 +1,38 @@
+/* src/styles/Button.css */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.6rem 1.2rem;
-  font-size: 1rem;
-  font-weight: 500;
-  border: none;
-  border-radius: 0.375rem;
-  background-color: #3b82f6; /* blue */
-  color: #fff;
+  padding: 0.8rem 2.5rem; /* Adjusted padding for width from Figma */
+  font-size: 1.1rem; /* Font size from Figma */
+  font-weight: 600; /* Bolder text */
+  font-family: 'Inter', sans-serif; /* Change font to Inter */
+  border: none; /* No border for the button as in Figma */
+  border-radius: 0.5rem; /* More rounded corners */
+  background-color: #8b9d62; /* Greenish background from Figma */
+  color: #fff; /* White text color */
   cursor: pointer;
   text-decoration: none; /* for Link */
-  transition: background-color 0.2s ease, opacity 0.2s ease;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Subtle shadow */
 }
 
 /* Hover & focus */
 .btn:hover:not(.btn--disabled),
 .btn:focus-visible:not(.btn--disabled) {
-  background-color: #2563eb;
+  background-color: #7a8a54; /* Slightly darker green on hover */
+  transform: translateY(-1px); /* Slight lift on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
 
 /* Disabled */
 .btn--disabled,
 .btn:disabled {
-  background-color: #93c5fd;
+  background-color: #c0cf9e; /* Lighter green when disabled */
   cursor: not-allowed;
   opacity: 0.7;
+  transform: none; /* No lift when disabled */
+  box-shadow: none; /* No shadow when disabled */
 }
 
 /* Icon modifiers */
@@ -40,7 +47,7 @@
   line-height: 1;
 }
 
-/* position for basket button */
+/* position for basket button (ensure this is still relevant for other pages) */
 .btn.basket-button {
   position: absolute;
   bottom: 24px;

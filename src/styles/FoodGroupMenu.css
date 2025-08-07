@@ -1,0 +1,50 @@
+/* src/styles/FoodGroupMenu.css */
+.food-group-menu {
+  position: relative; /* Position above the cabinet background */
+  z-index: 1;
+  width: 80%;
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.85); /* Translucent white background */
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px); /* Blurs the background behind it */
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+}
+
+.food-group-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns grid */
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 1.5rem;
+}
+
+.food-group-item {
+  text-align: center;
+  padding: 2rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 2px solid transparent; /* Default transparent border */
+}
+
+.food-group-item:hover,
+.food-group-item.is-selected {
+  background-color: #e2e8f0; /* Lighter background on hover/selection */
+  border-color: #3b82f6; /* Blue border on hover/selection */
+  transform: translateY(-5px); /* Slight lift effect */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.food-group-name {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #334155; /* Dark gray text */
+  transition: color 0.2s;
+}
+
+.food-group-item.is-selected .food-group-name {
+  color: #3b82f6; /* Blue text when selected */
+}

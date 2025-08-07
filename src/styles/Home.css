@@ -1,0 +1,62 @@
+/* src/styles/Home.css */
+.home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-image: url('/assets/images/homepage.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #f0f4f8;
+}
+
+.home-cabinet-img {
+  display: none; /* Ensure this is hidden if the img tag is still in JSX */
+}
+
+.home-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Refined styling for the semi-transparent box */
+  max-width: 60vw; /* Increased max-width for a slightly wider box */
+  max-height: 65vh; /* Adjusted max-height to better fit content and aspect */
+  width: auto;
+  height: auto;
+  background-color: rgba(255, 255, 255, 0.8); /* 80% opacity */
+  border-radius: 20px; /* 20px corner radius */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  padding: 4.5rem 3.5rem; /* Adjusted padding for more internal space and to push button down */
+  justify-content: center; /* Center content vertically within the box */
+  box-sizing: border-box; /* Include padding in the width/height calculation */
+}
+
+.home-title {
+  font-family: 'Newsreader', serif;
+  font-size: 2.8rem; /* Font size for 'Build Your Meal' */
+  font-weight: 400; /* Changed to normal weight (not bold) */
+  margin-bottom: 1.5rem; /* Increased margin to push the button down */
+  letter-spacing: 1px;
+  color: #333;
+  text-shadow: none;
+}
+
+.home-subtitle {
+  font-family: 'Newsreader', serif;
+  font-size: 1.8rem; /* Font size for 'HealthiMart' */
+  font-style: normal;
+  margin-top: 0;
+  margin-bottom: 0.5rem; /* Reduced margin to bring it closer to the title */
+  color: #333;
+  text-shadow: none;
+  font-weight: 400;
+}
