@@ -25,38 +25,38 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* Refined styling for the semi-transparent box */
-  max-width: 60vw; /* Increased max-width for a slightly wider box */
-  max-height: 65vh; /* Adjusted max-height to better fit content and aspect */
-  width: auto;
-  height: auto;
-  background-color: rgba(255, 255, 255, 0.8); /* 80% opacity */
+  width: 500px;
+  height: 350px; /* Fixed height for the box */
+  background-color: rgba(255, 255, 255, 0.6); /* Opacity 60% */
   border-radius: 20px; /* 20px corner radius */
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-  padding: 4.5rem 3.5rem; /* Adjusted padding for more internal space and to push button down */
-  justify-content: center; /* Center content vertically within the box */
+  padding: 4.5rem 3.5rem; /* Adjusted padding for internal space */
+  justify-content: space-between; /* Distribute space between items */
   box-sizing: border-box; /* Include padding in the width/height calculation */
+  /* Removed transform: translateY(-20px) to revert box placement */
 }
 
 .home-title {
   font-family: 'Newsreader', serif;
-  font-size: 2.8rem; /* Font size for 'Build Your Meal' */
-  font-weight: 400; /* Changed to normal weight (not bold) */
-  margin-bottom: 1.5rem; /* Increased margin to push the button down */
-  letter-spacing: 1px;
-  color: #333;
+  font-size: 40px; /* Reduced font size for 'Build Your Meal' */
+  font-weight: 300; /* Regular weight */
+  line-height: 120%; /* Line height */
+  letter-spacing: -0.02em; /* Letter spacing */
+  margin-top: 0;
+  margin-bottom: 0; /* Let flexbox handle spacing */
+  color: #48502F; /* Color for 'Build Your Meal' text */
   text-shadow: none;
 }
 
 .home-subtitle {
   font-family: 'Newsreader', serif;
-  font-size: 1.8rem; /* Font size for 'HealthiMart' */
+  font-size: 1.4rem; /* Font size for 'HealthiMart' */
   font-style: normal;
   margin-top: 0;
-  margin-bottom: 0.5rem; /* Reduced margin to bring it closer to the title */
-  color: #333;
+  margin-bottom: 0.5rem; /* Small margin to separate from title */
+  color: #555; /* Color for 'HealthiMart' */
   text-shadow: none;
   font-weight: 400;
 }
