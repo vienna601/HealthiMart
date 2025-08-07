@@ -1,4 +1,3 @@
-/* src/styles/Home.css */
 .home-page {
   display: flex;
   flex-direction: column;
@@ -15,7 +14,7 @@
 }
 
 .home-cabinet-img {
-  display: none; /* Ensure this is hidden if the img tag is still in JSX */
+  display: none; 
 }
 
 .home-content {
@@ -26,27 +25,26 @@
   flex-direction: column;
   align-items: center;
   width: 500px;
-  height: 350px; /* Fixed height for the box */
-  background-color: rgba(255, 255, 255, 0.6); /* Opacity 60% */
-  border-radius: 20px; /* 20px corner radius */
+  height: 350px; 
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 20px; 
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-  padding: 4.5rem 3.5rem; /* Adjusted padding for internal space */
-  justify-content: space-between; /* Distribute space between items */
-  box-sizing: border-box; /* Include padding in the width/height calculation */
-  /* Removed transform: translateY(-20px) to revert box placement */
+  padding: 4.5rem 3.5rem; 
+  justify-content: space-between; 
+  box-sizing: border-box; /
 }
 
 .home-title {
   font-family: 'Newsreader', serif;
-  font-size: 40px; /* Reduced font size for 'Build Your Meal' */
-  font-weight: 300; /* Regular weight */
-  line-height: 120%; /* Line height */
-  letter-spacing: -0.02em; /* Letter spacing */
+  font-size: 40px; 
+  font-weight: 300; 
+  line-height: 120%;
+  letter-spacing: -0.02em;
   margin-top: 0;
-  margin-bottom: 0; /* Let flexbox handle spacing */
-  color: #48502F; /* Color for 'Build Your Meal' text */
+  margin-bottom: 0; 
+  color: #48502F; 
   text-shadow: none;
 }
 
@@ -55,7 +53,7 @@
   font-size: 1.4rem; /* Font size for 'HealthiMart' */
   font-style: normal;
   margin-top: 0;
-  margin-bottom: 0.5rem; /* Small margin to separate from title */
+  margin-bottom: 0.5rem; 
   color: #555; /* Color for 'HealthiMart' */
   text-shadow: none;
   font-weight: 400;

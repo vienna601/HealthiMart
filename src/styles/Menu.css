@@ -1,4 +1,3 @@
-/* src/styles/Menu.css */
 .menu-page {
   display: flex;
   flex-direction: column;
@@ -39,17 +38,8 @@
   color: #667085;
 }
 
-.menu-proceed-btn {
-  position: absolute;
-  bottom: 24px;
-  right: 24px;
-  z-index: 2; /* Ensure button is on top */
-}
-
-/* Adjust basket button position if needed, as it might conflict with menu-proceed-btn */
+/* These buttons are hidden in the desired design */
+.menu-proceed-btn,
 .basket-button {
-  position: absolute;
-  bottom: 24px;
-  left: 24px; /* Position on the left to avoid conflict */
-  z-index: 2;
+  display: none;
 }

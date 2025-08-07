@@ -29,7 +29,7 @@ export default function Menu() {
       <header className="menu-header">
         <h1 className="menu-title">Ingredients</h1>
         <p className="menu-subtitle">
-          Hover over a group to see what's inside.
+            Seclect a group to see what's inside.
         </p>
       </header>
 
@@ -39,16 +39,6 @@ export default function Menu() {
         onSelectGroup={setSelectedGroup}
         selectedGroup={selectedGroup}
       />
-
-      {/* Button to navigate to the FoodRack, showing items of the selected group */}
-      <Button to="/rack" icon="arrow" className="menu-proceed-btn">
-        View {selectedGroup.charAt(0).toUpperCase() + selectedGroup.slice(1)}
-      </Button>
-
-      {/* Button to view the shopping basket */}
-      <Button to="/basket" className="basket-button">
-        Basket ({basket.length})
-      </Button>
     </div>
   );
 }

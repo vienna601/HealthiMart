@@ -1,50 +1,82 @@
-/* src/styles/FoodGroupMenu.css */
 .food-group-menu {
-  position: relative; /* Position above the cabinet background */
+  position: relative; 
   z-index: 1;
-  width: 80%;
-  max-width: 900px;
-  background: rgba(255, 255, 255, 0.85); /* Translucent white background */
+  width: 40%; 
+  max-width: 400px; 
+  background: rgba(255, 255, 255, 0.85); 
   border-radius: 12px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px); /* Blurs the background behind it */
-  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px);
+  padding: 1rem; 
 }
 
 .food-group-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns grid */
-  gap: 1rem;
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  gap: 0.75rem; 
   list-style: none;
   margin: 0;
-  padding: 1.5rem;
+  padding: 0; 
 }
 
 .food-group-item {
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 1.5rem 1rem; 
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-  background-color: rgba(255, 255, 255, 0.6);
-  border: 2px solid transparent; /* Default transparent border */
+  border: 2px solid transparent; 
+  width: 100%; 
+  box-sizing: border-box; 
+}
+
+.food-group-item.food-group-item--fats {
+  background-color: #EF4444; 
+  width: 50%; 
+}
+
+.food-group-item.food-group-item--protein {
+  background-color: #F97316; 
+  width: 60%;
+}
+
+.food-group-item.food-group-item--dairy {
+  background-color: #3B82F6;
+  width: 70%;
+}
+
+.food-group-item.food-group-item--grains {
+  background-color: #CA8A04; 
+  width: 80%;
+}
+
+.food-group-item.food-group-item--fruits {
+  background-color: #22C55E; 
+  width: 90%;
+}
+
+.food-group-item.food-group-item--vegetables {
+  background-color: #16A34A; 
+  width: 100%;
 }
 
 .food-group-item:hover,
 .food-group-item.is-selected {
-  background-color: #e2e8f0; /* Lighter background on hover/selection */
-  border-color: #3b82f6; /* Blue border on hover/selection */
-  transform: translateY(-5px); /* Slight lift effect */
+  background-color: #e2e8f0; 
+  border-color: #3b82f6; 
+  transform: translateY(-5px); 
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .food-group-name {
   margin: 0;
   font-size: 1.5rem;
-  color: #334155; /* Dark gray text */
+  color: #334155; 
   transition: color 0.2s;
 }
 
 .food-group-item.is-selected .food-group-name {
-  color: #3b82f6; /* Blue text when selected */
+  color: #3b82f6;
 }

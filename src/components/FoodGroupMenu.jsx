@@ -10,7 +10,8 @@ export default function FoodGroupMenu({ groups, onSelectGroup, selectedGroup }) 
         {groups.map((group) => (
           <li
             key={group}
-            className={`food-group-item ${
+            // Added dynamic class for specific styling
+            className={`food-group-item food-group-item--${group} ${
               selectedGroup === group ? "is-selected" : ""
             }`}
             onMouseEnter={() => onSelectGroup(group)} // Update selected group on hover
