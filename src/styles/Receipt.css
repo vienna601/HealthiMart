@@ -10,13 +10,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 2rem 3rem;
   background: #fff;
   border-bottom: 1px solid #e2e8f0;
 }
 .receipt-title {
   margin: 0;
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 /* Main body */
@@ -29,7 +29,7 @@
 
 /* Nutrition Facts */
 .nutrition-section {
-  flex: 0 0 200px;
+  flex: 0 0 300px;
 }
 .nutrition-img {
   width: 100%;
@@ -57,7 +57,7 @@
   margin-top: 0;
 }
 .choice-img {
-  width: 100%;
+  width: 256px;
   height: auto;
   border-radius: 6px;
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/StarRating.css";
 
-export default function StarRating({ rating = 0 }) {
+export default function StarRating({ rating }) {
   // clamp rating between 0 and 5
   const count = Math.max(0, Math.min(5, Math.round(rating)));
 

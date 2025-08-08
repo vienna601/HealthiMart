@@ -28,17 +28,11 @@ export default function Menu() {
 
       <header className="menu-header">
         <h1 className="menu-title">Ingredients</h1>
-        <p className="menu-subtitle">
-            Seclect a group to see what's inside.
-        </p>
+        <p className="menu-subtitle">Select a group to see what's inside.</p>
       </header>
 
       {/* FoodGroupMenu component for the interactive hover menu */}
-      <FoodGroupMenu
-        groups={foodGroups}
-        onSelectGroup={setSelectedGroup}
-        selectedGroup={selectedGroup}
-      />
+      <FoodGroupMenu groups={foodGroups} />
     </div>
   );
 }

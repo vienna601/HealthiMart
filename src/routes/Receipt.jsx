@@ -99,7 +99,7 @@ export default function Receipt() {
       {/* Footer with confirm button */}
       <footer className="receipt-footer">
         <Button to="/summary" icon="arrow">
-          Confirm
+          Next
         </Button>
       </footer>
     </div>

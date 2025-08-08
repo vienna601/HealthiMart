@@ -31,7 +31,7 @@ export default function Button({
 
   if (to) {
     return (
-      <Link to={to} className={classes} {...props}>
+      <Link to={to} className={classes} onClick={onClick} {...props}>
         {content}
       </Link>
     );

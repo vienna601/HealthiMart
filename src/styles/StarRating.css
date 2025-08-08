@@ -1,7 +1,7 @@
 .star-rating {
   display: inline-flex;
   gap: 4px;
-  font-size: 1.25rem; /* adjust size as needed */
+  font-size: 5rem; /* adjust size as needed */
 }
 
 .star {

@@ -7,7 +7,7 @@
 
 /* --- Header --- */
 .basket-header {
-  padding: 1rem 1.5rem;
+  padding: 2rem 2.5rem;
   border-bottom: 1px solid #e2e8f0;
   background: #fff;
   display: flex;
@@ -17,7 +17,7 @@
 }
 .basket-header h1 {
   margin: 0;
-  font-size: 1.75rem;
+  font-size: 2rem;
 }
 .basket-count {
   color: #718096;
