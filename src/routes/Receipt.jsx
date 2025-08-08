@@ -1,10 +1,10 @@
 import React, { useMemo } from "react";
-import { useNavigate } from "react-router-dom";
 import { useMealContext } from "../context/MealContext.jsx";
 import { useNutritionCalc } from "../hooks/useNutritionCalc.js"; // :contentReference[oaicite:4]{index=4}
 import { compareToRDI, formatNutrients } from "../utils/nutrientHelpers.js"; // :contentReference[oaicite:5]{index=5}
 import StarRating from "../components/StarRating.jsx";
 import Button from "../components/Button.jsx";
+import HeaderBar from "../components/HeaderBar.jsx";
 import "../styles/Receipt.css";
 
 export default function Receipt() {
@@ -46,6 +46,7 @@ export default function Receipt() {
 
   return (
     <div className="receipt-page">
+      <HeaderBar></HeaderBar>
       {/* Header with combined name & stars */}
       <header className="receipt-header">
         <h1 className="receipt-title">{combinedName}</h1>

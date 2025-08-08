@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useMealContext } from "../context/MealContext.jsx";
 import StarRating from "../components/StarRating.jsx";
 import Button from "../components/Button.jsx";
+import HeaderBar from "../components/HeaderBar.jsx";
 import "../styles/Summary.css";
 
 export default function Summary() {
@@ -27,7 +28,10 @@ export default function Summary() {
     if (macros.carbs >= RDI.carbs * 0.5 && macros.carbs <= RDI.carbs * 1.2) {
       score += 1;
     }
-    if (macros.protein >= RDI.protein * 0.5 && macros.protein <= RDI.protein * 1.2) {
+    if (
+      macros.protein >= RDI.protein * 0.5 &&
+      macros.protein <= RDI.protein * 1.2
+    ) {
       score += 1;
     }
     if (macros.fat >= RDI.fat * 0.5 && macros.fat <= RDI.fat * 1.2) {
@@ -64,7 +68,8 @@ export default function Summary() {
     };
 
     // Check for deficits
-    if (macrosRemaining.carbs > RDI.carbs * 0.3) { // If more than 30% of RDI is missing
+    if (macrosRemaining.carbs > RDI.carbs * 0.3) {
+      // If more than 30% of RDI is missing
       messages.deficit.push("carbohydrates");
     }
     if (macrosRemaining.protein > RDI.protein * 0.3) {
@@ -101,10 +106,13 @@ export default function Summary() {
 
   return (
     <div className="summary-page">
+      <HeaderBar></HeaderBar>
       <header className="summary-header">
         <h1 className="summary-title">Your Meal Summary</h1>
         <StarRating rating={rating} />
-        <span className="summary-calories">{totalCalories.toFixed(0)} kcal</span>
+        <span className="summary-calories">
+          {totalCalories.toFixed(0)} kcal
+        </span>
       </header>
 
       <div className="summary-content">
@@ -116,12 +124,14 @@ export default function Summary() {
           )}
           {feedback.excess.length > 0 && (
             <p className="feedback-message-bad">
-              ⚠️ You have an excess of: **{feedback.excess.join(", ")}**. Consider reducing these for better balance.
+              ⚠️ You have an excess of: **{feedback.excess.join(", ")}**.
+              Consider reducing these for better balance.
             </p>
           )}
           {feedback.deficit.length > 0 && (
             <p className="feedback-message-good">
-              💡 Try adding more **{feedback.deficit.join(", ")}** for a more balanced meal!
+              💡 Try adding more **{feedback.deficit.join(", ")}** for a more
+              balanced meal!
             </p>
           )}
         </section>

@@ -1,7 +1,7 @@
 // src/routes/Menu.jsx
 import { useMealContext } from "../context/MealContext.jsx";
 import FoodGroupMenu from "../components/FoodGroupMenu.jsx";
-import Button from "../components/Button.jsx";
+import HeaderBar from "../components/HeaderBar.jsx";
 import "../styles/Menu.css"; // Styles for the overall page layout
 
 export default function Menu() {
@@ -19,6 +19,7 @@ export default function Menu() {
 
   return (
     <div className="menu-page">
+      <HeaderBar></HeaderBar>
       {/* Cabinet background image, similar to FoodRack */}
       <img
         src="/assets/images/cabinet.png"

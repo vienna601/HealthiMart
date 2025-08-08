@@ -7,6 +7,10 @@
 
 /* --- Header --- */
 .basket-header {
+  position: static;
+  margin-top: 80px;
+  left: 0;
+  right: 0;
   padding: 2rem 2.5rem;
   border-bottom: 1px solid #e2e8f0;
   background: #fff;

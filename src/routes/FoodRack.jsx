@@ -4,6 +4,7 @@ import { getItemsByGroup } from "../data/food-items.js";
 import { chunkArray } from "../utils/storage.js";
 import FoodItemCard from "../components/FoodItemCard.jsx";
 import Button from "../components/Button.jsx";
+import HeaderBar from "../components/HeaderBar.jsx";
 import "../styles/FoodRack.css";
 
 export default function FoodRack() {
@@ -19,6 +20,7 @@ export default function FoodRack() {
 
   return (
     <div className="food-rack-page">
+      <HeaderBar></HeaderBar>
       {/* Cabinet background */}
       <img
         src="/assets/images/cabinet.png"

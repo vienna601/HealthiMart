@@ -2,6 +2,7 @@ import { useMealContext } from "../context/MealContext.jsx";
 import NutrientList from "../components/NutrientList.jsx";
 import { compareToRDI } from "../utils/nutrientHelpers.js";
 import Button from "../components/Button.jsx";
+import HeaderBar from "../components/HeaderBar.jsx";
 import "../styles/Basket.css";
 
 export default function Basket() {
@@ -14,6 +15,7 @@ export default function Basket() {
 
   return (
     <div className="basket-page">
+      <HeaderBar></HeaderBar>
       {/* Header */}
       <header className="basket-header">
         <h1>Basket</h1>
