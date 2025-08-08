@@ -54,15 +54,6 @@ export default function Receipt() {
 
       {/* Main body: Nutrition Facts + choices */}
       <div className="receipt-body">
-        {/* Nutrition Facts image / component */}
-        <div className="nutrition-section">
-          <img
-            src="/assets/images/nutrition-facts.png"
-            alt="Nutrition Facts"
-            className="nutrition-img"
-          />
-        </div>
-
         {/* Best & Worst choice cards */}
         <div className="choices-section">
           {bestItem && (

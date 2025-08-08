@@ -6,14 +6,15 @@
   padding: 0.8rem 2.5rem; /* Adjusted padding for width from Figma */
   font-size: 1.1rem; /* Font size from Figma */
   font-weight: 600; /* Bolder text */
-  font-family: 'Inter', sans-serif; /* Change font to Inter */
+  font-family: "Inter", sans-serif; /* Change font to Inter */
   border: none; /* No border for the button as in Figma */
   border-radius: 0.5rem; /* More rounded corners */
   background-color: #8b9d62; /* Greenish background from Figma */
   color: #fff; /* White text color */
   cursor: pointer;
   text-decoration: none; /* for Link */
-  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease,
+    transform 0.1s ease;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Subtle shadow */
 }
 

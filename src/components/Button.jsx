@@ -31,7 +31,13 @@ export default function Button({
 
   if (to) {
     return (
-      <Link to={to} className={classes} onClick={onClick} {...props}>
+      <Link
+        to={to}
+        className={classes}
+        onClick={onClick}
+        style={{ display: "inline-block" }}
+        {...props}
+      >
         {content}
       </Link>
     );
