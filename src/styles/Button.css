@@ -6,22 +6,22 @@
   padding: 0.8rem 2.5rem; /* Adjusted padding for width from Figma */
   font-size: 1.1rem; /* Font size from Figma */
   font-weight: 600; /* Bolder text */
-  font-family: "Inter", sans-serif; /* Change font to Inter */
-  border: none; /* No border for the button as in Figma */
-  border-radius: 0.5rem; /* More rounded corners */
-  background-color: #8b9d62; /* Greenish background from Figma */
-  color: #fff; /* White text color */
+  font-family: 'Inter', serif; /* Apply Inter font to button */
+  border: 1px solid #ccc; /* Subtle border as in Figma */
+  border-radius: 8px; /* More rounded corners */
+  background-color: #f0f0f0; /* Light gray background as in Figma */
+  color: #333; /* Dark text color for contrast */
   cursor: pointer;
   text-decoration: none; /* for Link */
-  transition: background-color 0.2s ease, box-shadow 0.2s ease,
-    transform 0.1s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Subtle shadow as in Figma */
+  text-align: center; /* Center the text horizontally */
 }
 
 /* Hover & focus */
 .btn:hover:not(.btn--disabled),
 .btn:focus-visible:not(.btn--disabled) {
-  background-color: #7a8a54; /* Slightly darker green on hover */
+  background-color: #e0e0e0; /* Slightly darker on hover */
   transform: translateY(-1px); /* Slight lift on hover */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
@@ -29,7 +29,7 @@
 /* Disabled */
 .btn--disabled,
 .btn:disabled {
-  background-color: #c0cf9e; /* Lighter green when disabled */
+  background-color: #e9e9e9;
   cursor: not-allowed;
   opacity: 0.7;
   transform: none; /* No lift when disabled */

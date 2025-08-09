@@ -8,7 +8,6 @@ const headerStyle = {
   height: "80px",
   opacity: 0.8,
   background: "#ffffffff",
-  borderRadius: 20,
   display: "flex",
   alignItems: "center",
   paddingLeft: 32,
