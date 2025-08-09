@@ -1,82 +1,146 @@
+/* src/styles/FoodGroupMenu.css */
 .food-group-menu {
-  position: relative; 
+  /* Figma Layout & Style for semi-transparent box */
+  width: 700px; /* From Figma */
+  height: 805px; /* From Figma */
+  flex-shrink: 0; /* From Figma */
+  border-radius: 20px; /* From Figma */
+  opacity: 0.8; /* From Figma */
+  background: #D9D9D9; /* From Figma */
+
+  position: relative;
   z-index: 1;
-  width: 40%; 
-  max-width: 400px; 
-  background: rgba(255, 255, 255, 0.85); 
-  border-radius: 12px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px); 
-  -webkit-backdrop-filter: blur(10px);
-  padding: 1rem; 
+  padding: 0;
+  box-sizing: border-box;
+
+  display: flex; /* Make it a flex container to arrange its contents */
+  flex-direction: column; /* Stack contents vertically */
+  align-items: center; /* Center contents horizontally */
+  justify-content: flex-start; /* Align contents to the top */
+  padding-top: 60px; /* Add padding from the top edge for the title */
 }
 
+/* Styling for the "Ingredients" title moved inside FoodGroupMenu */
+.food-group-menu-title {
+  /* Figma Typography & Layout for "Ingredients" text */
+  color: #48502F; /* From Figma */
+  text-align: center; /* From Figma */
+  font-feature-settings: 'liga' off, 'clig' off; /* From Figma */
+  font-family: 'Newsreader', serif; /* From Figma */
+  font-size: 65px; /* From Figma */
+  font-style: normal; /* From Figma */
+  font-weight: 400; /* From Figma */
+  line-height: 100%; /* From Figma (65px) */
+  letter-spacing: -0.65px; /* From Figma */
+  
+  width: 572px; /* From Figma Layout */
+  height: 65px; /* From Figma Layout */
+  /* flex-direction and justify-content removed as they were for header container, not the title itself */
+  flex-shrink: 0; /* From Figma Layout */
+  margin-bottom: 40px; /* Space between "Ingredients" and the first button */
+}
+
+
 .food-group-list {
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; 
-  gap: 0.75rem; 
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally within the flex container */
+  gap: 2rem; /* Space between buttons */
   list-style: none;
   margin: 0;
-  padding: 0; 
+  padding: 0;
+  width: 100%; /* Allow list to take full width of parent */
+}
+
+.food-group-item-wrapper {
+  width: 100%; /* Ensure the wrapper takes full width for flex alignment */
+  display: flex;
+  justify-content: center; /* Center the bottom row horizontally */
+  margin-top: 0.75rem; /* Maintain consistent gap */
+}
+
+.food-group-bottom-row {
+  display: flex;
+  gap: 0.75rem; /* Space between Fruits and Vegetables buttons */
+  justify-content: center; /* Center buttons within this row */
+  align-items: center;
+  width: auto; /* Allow content to define width */
 }
 
 .food-group-item {
   text-align: center;
-  padding: 1.5rem 1rem; 
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-  border: 2px solid transparent; 
-  width: 100%; 
-  box-sizing: border-box; 
+  border: none;
+  box-sizing: border-box;
+  display: flex; /* Enable flex for internal text centering */
+  justify-content: center; /* Center text horizontally */
+  align-items: center; /* Center text vertically */
 }
 
+/* Specific Layout & Style for each food group button (from Figma) */
+
+/* "Fats" button */
 .food-group-item.food-group-item--fats {
-  background-color: #EF4444; 
-  width: 50%; 
+  width: 162px;
+  padding: 19px 0;
+  background: #E56161;
 }
 
+/* "Protein" button */
 .food-group-item.food-group-item--protein {
-  background-color: #F97316; 
-  width: 60%;
+  width: 227px;
+  padding: 19px 78px 19px 79px;
+  background: #E5A140;
 }
 
+/* "Dairy" button */
 .food-group-item.food-group-item--dairy {
-  background-color: #3B82F6;
-  width: 70%;
+  width: 290px;
+  padding: 19px 0;
+  background: #669BE4;
 }
 
+/* "Grains" button */
 .food-group-item.food-group-item--grains {
-  background-color: #CA8A04; 
-  width: 80%;
+  width: 363px;
+  padding: 19px 0;
+  background: #AD711D;
 }
 
+/* "Fruits" button */
 .food-group-item.food-group-item--fruits {
-  background-color: #22C55E; 
-  width: 90%;
+  width: 227px;
+  padding: 19px 0;
+  background: #7FB552;
 }
 
+/* "Vegetables" button */
 .food-group-item.food-group-item--vegetables {
-  background-color: #16A34A; 
-  width: 100%;
+  width: auto; /* Let content define width */
+  padding: 19px 58px 19px 59px; /* Specific padding from Figma */
+  background: #7FB552;
 }
 
+/* Typography for text inside all buttons (food-group-name) */
+.food-group-name {
+  color: #FFF;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%; /* 26px */
+  margin: 0;
+}
+
+/* Hover & Selected States */
 .food-group-item:hover,
 .food-group-item.is-selected {
-  background-color: #e2e8f0; 
-  border-color: #3b82f6; 
-  transform: translateY(-5px); 
+  transform: translateY(-5px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.food-group-name {
-  margin: 0;
-  font-size: 1.5rem;
-  color: #334155; 
-  transition: color 0.2s;
-}
-
-.food-group-item.is-selected .food-group-name {
-  color: #3b82f6;
+  /* Keeping general hover/selected styles that are not overridden by specific button colors */
+  /* If you want specific hover colors for each, they need to be defined per group */
 }

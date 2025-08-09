@@ -1,3 +1,4 @@
+/* src/styles/Menu.css */
 .menu-page {
   display: flex;
   flex-direction: column;
@@ -20,26 +21,16 @@
   pointer-events: none; /* Allows clicks to pass through to elements above */
 }
 
+/* Removed menu-header and menu-title styles as they are now in food-group-menu-css */
 .menu-header {
-  position: relative; /* Position above the cabinet background */
-  z-index: 1;
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #333; /* Darker text for readability against the cabinet */
-}
-
-.menu-title {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+  display: none; /* Hide the header container */
 }
 
 .menu-subtitle {
-  font-size: 1rem;
-  color: #667085;
+  display: none; /* Hidden as per desired design */
 }
 
 /* These buttons are hidden in the desired design */
-.menu-proceed-btn,
-.basket-button {
+.menu-proceed-btn {
   display: none;
 }
