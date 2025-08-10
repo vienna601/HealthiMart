@@ -1,4 +1,3 @@
-/* src/styles/Summary.css */
 .summary-page {
   display: flex;
   flex-direction: column;
@@ -6,19 +5,18 @@
   justify-content: flex-start;
   min-height: 100vh;
   padding: 20px;
-  padding-top: 50px;
   background-color: #f0f4f8;
   box-sizing: border-box;
-  position: relative; /* Make summary-page relative for absolute positioning of footer buttons */
+  position: relative;
 }
 
-/* Header Section */
 .summary-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   max-width: 1200px;
+  margin-top: 60px;
   margin-bottom: 40px;
 }
 
@@ -45,7 +43,6 @@
   gap: 10px;
 }
 
-/* Specific button styles (using .btn class from Button.jsx, overriding via specific classes) */
 .summary-page .start-over-button {
   display: inline-flex;
   padding: 9.5px 26px 9.5px 27px;
@@ -81,7 +78,6 @@
   text-decoration: none;
 }
 
-/* Meal Naming Section */
 .meal-naming-section {
   display: flex;
   flex-direction: row;
@@ -119,7 +115,6 @@
   max-width: 725px;
 }
 
-/* Content Grid (Nutrients Summary & Combined Fun Fact/Suggestions) */
 .content-grid {
   display: flex;
   justify-content: center;
@@ -127,7 +122,6 @@
   width: 100%;
   max-width: 1200px;
   gap: 20px;
-  /* Removed margin-bottom to let the footer buttons handle their own spacing */
 }
 
 .nutrients-summary-box {
@@ -223,7 +217,6 @@
   margin-left: 10px;
 }
 
-/* Combined Fun Fact and Suggestions Box */
 .fun-fact-suggestions-box {
   width: 347px;
   height: 428px;
@@ -237,8 +230,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start; /* Ensure content starts from the top */
-  /* Removed position: relative and absolute button styling from here as buttons are now separate */
+  justify-content: flex-start;
 }
 
 .fun-fact-title {
@@ -261,7 +253,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: 130%;
-  margin: 0 0 30px 0; /* Add bottom margin to create space before suggestions */
+  margin: 0 0 30px 0;
 }
 
 .suggestions-title {
@@ -272,7 +264,7 @@
   font-style: normal;
   font-weight: 600;
   line-height: 130%;
-  margin: 0 0 20px 0; /* Bottom margin for spacing */
+  margin: 0 0 20px 0;
 }
 
 .suggestions-text {
@@ -284,21 +276,19 @@
   font-style: normal;
   font-weight: 400;
   line-height: 130%;
-  margin: 0; /* Remove extra bottom margin as buttons are outside */
+  margin: 0;
 }
 
-
-/* Footer Buttons (Share and Build Next Meal) */
 .summary-footer-buttons {
   display: flex;
-  flex-direction: column; /* Stack buttons vertically */
-  gap: 10px; /* Space between buttons */
+  flex-direction: column;
+  gap: 10px;
   
-  position: absolute; /* Position relative to .summary-page */
-  bottom: 20px; /* Distance from bottom of page */
-  right: 20px; /* Distance from right of page */
-  align-items: flex-end; /* Align buttons to the right within their container */
-  z-index: 10; /* Ensure buttons are above other content if needed */
+  position: absolute;
+  bottom: 20px; 
+  right: 20px; 
+  align-items: flex-end; 
+  z-index: 10;
 }
 
 .summary-page .share-meal-button,

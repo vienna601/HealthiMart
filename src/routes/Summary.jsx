@@ -1,12 +1,13 @@
-// src/routes/Summary.jsx
 import React from "react";
-import { Link } from "react-router-dom"; // Assuming Link is used for navigation
-import Button from "../components/Button.jsx"; // Reusing the Button component
-import "../styles/Summary.css"; // Styles for the Summary page
+import Button from "../components/Button.jsx"; 
+import { useMealContext } from "../context/MealContext.jsx";
+import HeaderBar from "../components/HeaderBar.jsx";
+import "../styles/Summary.css";
 
 export default function Summary() {
-  // Placeholder data for demonstration. You would get real data from context/state.
-  const itemCount = 3; // Example: Replace with actual basket.length or calculated items
+  const { basket } = useMealContext();
+  const itemCount = basket.length; 
+
   const nutrients = {
     macronutrients: {
       carbohydrates: "150",
@@ -37,7 +38,7 @@ export default function Summary() {
 
   return (
     <div className="summary-page">
-      
+      <HeaderBar />
 
       <header className="summary-header">
         <h1 className="summary-title">Summary <span className="item-count">{itemCount} items</span></h1>
@@ -81,22 +82,14 @@ export default function Summary() {
           </div>
         </div>
 
-        {/* Combined Fun Fact and Suggestions Box */}
-        <div className="fun-fact-suggestions-box"> {/* Renamed container */}
+        <div className="fun-fact-suggestions-box">
           <h2 className="fun-fact-title">Fun Fact</h2>
           <p className="fun-fact-text">{funFact}</p>
           
           <h2 className="suggestions-title">Suggestions</h2>
           <p className="suggestions-text">{suggestions}</p>
-
-          {/* Moved footer buttons here for positioning within this box */}
-          {/* <div className="summary-action-buttons">
-            <Button to="/share" className="share-meal-button">Share your meal</Button>
-            <Button to="/" className="build-next-meal-button">Build your next meal</Button>
-          </div> */}
         </div>
       </div>
-      {/* Moved original footer here as buttons are now direct children of summary-page */}
       <footer className="summary-footer-buttons">
         <Button to="/share" className="share-meal-button">Share your meal</Button>
         <Button to="/" className="build-next-meal-button">Build your next meal</Button>

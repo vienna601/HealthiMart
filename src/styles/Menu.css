@@ -1,11 +1,10 @@
-/* src/styles/Menu.css */
 .menu-page {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #f9f9f9; /* Fallback background */
+  background-color: #f9f9f9; 
   position: relative;
   overflow: hidden;
 }
@@ -17,20 +16,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 0; /* Background layer */
-  pointer-events: none; /* Allows clicks to pass through to elements above */
+  z-index: 0; 
+  pointer-events: none; 
 }
 
-/* Removed menu-header and menu-title styles as they are now in food-group-menu-css */
-.menu-header {
-  display: none; /* Hide the header container */
-}
-
-.menu-subtitle {
-  display: none; /* Hidden as per desired design */
-}
-
-/* These buttons are hidden in the desired design */
-.menu-proceed-btn {
-  display: none;
-}

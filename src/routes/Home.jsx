@@ -1,4 +1,3 @@
-// src/routes/Home.jsx
 import { Link } from "react-router-dom";
 import HeaderBar from "../components/HeaderBar.jsx";
 import Button from "../components/Button.jsx";

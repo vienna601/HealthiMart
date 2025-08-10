@@ -9,7 +9,7 @@ export default function Button({
   type = "button",
   disabled = false,
   className = "",
-  icon, // optional: "arrow" | "close" | etc.
+  icon, 
   ...props
 }) {
   const classes = [

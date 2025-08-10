@@ -2,11 +2,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* This centers the box vertically on the page */
+  justify-content: center; 
   height: 100vh;
   position: relative;
   overflow: hidden;
-  background-image: url('/assets/images/home-page.png'); /* This is the background image for the page */
+  background-image: url('/assets/images/home-page.png'); 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -14,82 +14,71 @@
 }
 
 .home-cabinet-img {
-  display: none; /* Ensure this is hidden if the img tag is still in JSX */
+  display: none; 
 }
 
 .home-content {
-  /* Figma Layout & Style for semi-transparent box */
-  width: 685px; /* From Figma */
-  height: 515px; /* From Figma */
-  flex-shrink: 0; /* From Figma */
-  border-radius: 20px; /* From Figma */
-  opacity: 0.8; /* From Figma */
-  background: #D9D9D9; /* From Figma */
+  width: 685px; 
+  height: 515px; 
+  flex-shrink: 0; 
+  border-radius: 20px; 
+  opacity: 0.8; 
+  background: #D9D9D9;
   
-  /* Flexbox for vertical alignment of children */
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center horizontally */
-  justify-content: center; /* Center vertically overall */
+  align-items: center; 
+  justify-content: center; 
   
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* Keep a subtle shadow */
-  padding: 0 3.5rem; /* Horizontal padding, this is the internal space */
-  box-sizing: border-box; /* Include padding in the width/height calculation */
-  
-  /* Removed backdrop-filter as it's not in the provided Figma spec for the box */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); 
+  padding: 0 3.5rem; 
+  box-sizing: border-box; 
 }
 
-.home-subtitle { /* This is "HealthiMart" in JSX */
-  /* Figma Typography for "HealthiMart" text */
-  color: #7A824F; /* From Figma */
-  font-feature-settings: 'liga' off, 'clig' off; /* From Figma */
-  font-family: 'Newsreader', serif; /* From Figma */
-  font-size: 32px; /* From Figma */
-  font-style: normal; /* From Figma */
-  font-weight: 500; /* From Figma */
-  line-height: 100%; /* From Figma (32px) */
-  letter-spacing: -0.32px; /* From Figma */
+.home-subtitle { 
+  color: #7A824F; 
+  font-feature-settings: 'liga' off, 'clig' off; 
+  font-family: 'Newsreader', serif; 
+  font-size: 32px; 
+  font-style: normal;
+  font-weight: 500; 
+  line-height: 100%; 
+  letter-spacing: -0.32px; 
 
-  /* Vertical spacing using margins */
-  margin-bottom: 20px; /* Space between HealthiMart and Build Your Meal */
-  margin-top: 0; /* Let justify-content handle top spacing */
+  margin-bottom: 20px;
+  margin-top: 0; 
 }
 
-.home-title { /* This is "Build Your Meal" in JSX */
-  /* Figma Typography for "Build Your Meal" text */
-  color: #48502F; /* From Figma */
-  text-align: center; /* From Figma */
-  font-feature-settings: 'liga' off, 'clig' off; /* From Figma */
-  font-family: 'Newsreader', serif; /* From Figma */
-  font-size: 64px; /* From Figma */
-  font-style: normal; /* From Figma */
-  font-weight: 400; /* From Figma */
-  line-height: 120%; /* From Figma (76.8px) */
-  letter-spacing: -1.28px; /* From Figma */
+.home-title { 
+  color: #48502F; 
+  text-align: center; 
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: 'Newsreader', serif;
+  font-size: 64px; 
+  font-style: normal; 
+  font-weight: 400; 
+  line-height: 120%; 
+  letter-spacing: -1.28px; 
 
-  white-space: nowrap; /* CRUCIAL: Prevent text from wrapping */
+  white-space: nowrap;
   
-  /* Vertical spacing using margins */
-  margin-top: 0; /* Let previous element's margin-bottom handle spacing */
-  margin-bottom: 50px; /* Space between Build Your Meal and the button */
+  margin-top: 0; 
+  margin-bottom: 50px;
 }
 
-/* Specific styling for the Button component when it's inside home-content */
 .home-content .btn {
-  /* Figma Layout & Style for "Start" button */
-  width: 227px; /* From Figma */
-  padding: 19px 0; /* Adjusted: Added horizontal padding to allow centering */
-  justify-content: center; /* From Figma */
-  align-items: center; /* From Figma */
-  border-radius: 8px; /* From Figma */
-  background: #7A824F; /* From Figma */
-  display: flex; /* Ensure it's a flex container for its own content as per Figma */
-  opacity: 1; /* Make the button fully opaque */
+  width: 227px; 
+  padding: 19px 0; 
+  justify-content: center; 
+  align-items: center; 
+  border-radius: 8px; 
+  background: #7A824F; 
+  display: flex; 
+  opacity: 1; 
 
-  /* Position it correctly within the flex column of home-content */
-  margin-top: 0; /* Let previous element's margin-bottom handle spacing */
-  margin-bottom: 0; /* No extra margin at the bottom */
-  box-sizing: border-box; /* Include padding in width/height */
-  color: #fff; /* Assuming white text as per visual */
-  text-decoration: none; /* For link styling */
+  margin-top: 0;
+  margin-bottom: 0; 
+  box-sizing: border-box;
+  color: #fff;
+  text-decoration: none; 
 }
