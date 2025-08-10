@@ -2,85 +2,320 @@
 .summary-page {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  background: #f9f9f9;
-  position: relative;
-}
-
-/* Header */
-.summary-header {
-  position: static;
-  margin-top: 80px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  padding: 2rem;
-  background: #fff;
-  border-bottom: 1px solid #e2e8f0;
-}
-.summary-title {
-  margin: 0;
-  font-size: 2.5rem;
-}
-.summary-calories {
-  display: block;
-  font-size: 1rem;
-  color: #667085;
-  margin-top: 0.5rem;
-}
-
-/* Content */
-.summary-content {
-  flex: 1;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column; /* Stack feedback and receipt vertically */
   align-items: center;
-  gap: 2rem;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 20px;
+  padding-top: 50px;
+  background-color: #f0f4f8;
+  box-sizing: border-box;
+  position: relative; /* Make summary-page relative for absolute positioning of footer buttons */
 }
 
-.summary-feedback {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  padding: 1.5rem;
+/* Header Section */
+.summary-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
-  max-width: 600px; /* Limit width for readability */
+  max-width: 1200px;
+  margin-bottom: 40px;
+}
+
+.summary-title {
+  color: #48502F;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: 'Newsreader', serif;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: -1.28px;
+  margin: 0;
+}
+
+.summary-title .item-count {
+  font-size: 0.5em;
+  color: #666;
+  margin-left: 10px;
+}
+
+.summary-header-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* Specific button styles (using .btn class from Button.jsx, overriding via specific classes) */
+.summary-page .start-over-button {
+  display: inline-flex;
+  padding: 9.5px 26px 9.5px 27px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background: #7A824F;
+  color: #FFF;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
   text-align: center;
+  text-decoration: none;
 }
 
-.feedback-message-bad {
-  color: #dc2626; /* Red for excess */
-  font-weight: 500;
-}
-.feedback-message-good {
-  color: #d97706; /* Amber for deficit */
-  font-weight: 500;
-}
-.feedback-message-great {
-  color: #16a34a; /* Green for balanced */
-  font-weight: 500;
+.summary-page .back-button {
+  display: inline-flex;
+  padding: 9.5px 31px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  border: 1px solid #C2C2C2;
+  background: #FFF;
+  color: #000;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  text-align: center;
+  text-decoration: none;
 }
 
-.summary-receipt-view {
+/* Meal Naming Section */
+.meal-naming-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   width: 100%;
-  max-width: 300px; /* Max width for the nutrition facts image */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  border-radius: 8px;
-  overflow: hidden;
+  max-width: 1200px;
+  margin-bottom: 30px;
+  gap: 15px;
 }
 
-.summary-nutrition-img {
-  width: 100%;
-  height: auto;
-  display: block;
+.meal-name-label {
+  color: #000;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: 'Newsreader', serif;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: -0.5px;
+  margin: 0;
+  flex-shrink: 0;
 }
 
-/* Footer */
-.summary-footer {
-  padding: 1rem 2rem;
-  background: #fff;
-  border-top: 1px solid #e2e8f0;
+.meal-name-input {
+  width: 725px;
+  height: 54px;
+  flex-shrink: 0;
+  border-radius: 24px;
+  border: 2px solid #ECECEC;
+  background: #FAFAF5;
+  padding: 0 20px;
+  font-size: 18px;
+  box-sizing: border-box;
+  flex-grow: 1;
+  max-width: 725px;
+}
+
+/* Content Grid (Nutrients Summary & Combined Fun Fact/Suggestions) */
+.content-grid {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
+  gap: 20px;
+  /* Removed margin-bottom to let the footer buttons handle their own spacing */
+}
+
+.nutrients-summary-box {
+  width: 686px;
+  height: 428px;
+  flex-shrink: 0;
+  border-radius: 24px;
+  border: 2px solid #E6E6E6;
+  background: #FAFAF5;
+  padding: 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.nutrients-summary-title {
+  color: #000;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: 'Inter', sans-serif;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  margin: 0 0 20px 0;
+}
+
+.nutrients-columns {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.nutrients-column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+  align-items: flex-start;
+}
+
+.nutrient-category {
+  color: #000;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  margin: 0 0 10px 0;
+}
+
+.nutrient-item {
+  color: #000;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  margin: 0 0 5px 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.nutrient-item-sub {
+  color: #000;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  margin: 0 0 5px 20px;
+  width: calc(100% - 20px);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.nutrient-value {
+  color: #000;
+  text-align: right;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  white-space: nowrap;
+  margin-left: 10px;
+}
+
+/* Combined Fun Fact and Suggestions Box */
+.fun-fact-suggestions-box {
+  width: 347px;
+  height: 428px;
+  flex-shrink: 0;
+  border-radius: 24px;
+  border: 2px solid #ECECEC;
+  background: #FAFAF5;
+  padding: 30px;
+  box-sizing: border-box;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start; /* Ensure content starts from the top */
+  /* Removed position: relative and absolute button styling from here as buttons are now separate */
+}
+
+.fun-fact-title {
+  color: #000;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: 'Inter', sans-serif;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  margin: 0 0 20px 0;
+}
+
+.fun-fact-text {
+  width: 100%;
+  color: #000;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  margin: 0 0 30px 0; /* Add bottom margin to create space before suggestions */
+}
+
+.suggestions-title {
+  color: #000;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: 'Inter', sans-serif;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  margin: 0 0 20px 0; /* Bottom margin for spacing */
+}
+
+.suggestions-text {
+  width: 100%;
+  color: #000;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  margin: 0; /* Remove extra bottom margin as buttons are outside */
+}
+
+
+/* Footer Buttons (Share and Build Next Meal) */
+.summary-footer-buttons {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  gap: 10px; /* Space between buttons */
+  
+  position: absolute; /* Position relative to .summary-page */
+  bottom: 20px; /* Distance from bottom of page */
+  right: 20px; /* Distance from right of page */
+  align-items: flex-end; /* Align buttons to the right within their container */
+  z-index: 10; /* Ensure buttons are above other content if needed */
+}
+
+.summary-page .share-meal-button,
+.summary-page .build-next-meal-button {
+  display: inline-flex;
+  padding: 14px 198px 13px 24px;
+  align-items: center;
+  border-radius: 8px;
+  background: #7A824F;
+  color: #FFF;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  text-align: center;
+  text-decoration: none;
+  width: auto;
+  min-width: 220px;
 }
