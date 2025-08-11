@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useMealContext } from "../context/MealContext.jsx";
 import NutrientList from "./NutrientList.jsx";
 import "../styles/NutrientList.css";
+import "../styles/FoodItemCard.css";
 import { compareToRDI } from "../utils/nutrientHelpers.js";
 
 export default function FoodItemCard({ item }) {
@@ -30,14 +31,16 @@ export default function FoodItemCard({ item }) {
         <span>{item.calories} kcal</span>
       </div>
 
-      {showInfo && (
-        <div className="food-item-card__popup">
-          <h5>Fun Fact</h5>
-          <p>{item.funFact}</p>
-          <h5>Nutrients</h5>
-          <NutrientList nutrients={item.nutrients} compareFn={compareToRDI} />
-        </div>
-      )}
+      {/* 3. Hover popup */}
+      {/* full-cover hover card */}
+      <div
+        className={`food-item-card__hovercard ${showInfo ? "is-visible" : ""}`}
+      >
+        <h5 className="popup__title">Nutrients</h5>
+        <NutrientList nutrients={item.nutrients} compareFn={compareToRDI} />
+        <h5 className="popup__title">Fun Fact</h5>
+        <p className="popup__text">{item.funFact}</p>
+      </div>
     </div>
   );
 }

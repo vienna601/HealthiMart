@@ -51,6 +51,7 @@
 .basket-item-card {
   position: relative;
   background: #fff;
+  font-family: "Inter";
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   overflow: hidden;
@@ -89,8 +90,9 @@
   font-weight: 500;
 }
 .item-calories {
-  margin: 0.25rem 0;
+  margin: 0.5rem 0;
   font-size: 0.875rem;
+  text-align: right;
   color: #4a5568;
 }
 .item-nutrients {
@@ -107,9 +109,25 @@
   align-items: center;
   z-index: 1;
 }
-.totals p {
+.totals {
+  font-family: "Inter";
+  margin: 0.25rem;
+  font-size: 1.3rem;
+  display: flex;
+  flex-direction: column;
+}
+/* space between the three macro groups */
+.macro-row {
+  display: flex;
+  flex-wrap: wrap; /* wraps neatly on small screens */
+  gap: 24px; /* ← adjust spacing here */
   margin: 0.25rem 0;
-  font-size: 0.9rem;
+  align-items: baseline;
+}
+
+.macro {
+  display: inline-flex;
+  gap: 6px; /* space between label and value */
 }
 
 /* --- Scrollbar styling (WebKit) --- */

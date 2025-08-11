@@ -1,58 +1,61 @@
-/* food item card */
 .food-item-card {
   position: relative;
-  width: 256px; /* base size for 8‑item rack */
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 256px;
+  /* keep the base tile simple; avoid borders that change size on hover */
+  background: transparent; /* let the shelf show through */
+  border-radius: 10px;
+  box-shadow: none;
   cursor: pointer;
-  overflow: hidden;
-  z-index: 2; /*hover*/
+  overflow: visible; /* don't clip hovercard shadow */
+  z-index: 2;
 }
 
 .food-item-card__img {
   display: block;
-  width: 100%;
-  height: auto;
+  width: 128px;
+  height: 128px;
+  object-fit: contain;
+  margin: 0 auto;
 }
 
+/* Label under the sprite */
 .food-item-card__info {
-  padding: 8px;
-  border-top: 1px solid #eee;
+  font-family: "Inter";
   text-align: center;
+  margin-top: 8px;
 }
 
-.food-item-card__name {
-  margin: 0;
-  font-size: 1rem;
-}
-
-.food-item-card__calories {
-  font-size: 0.875rem;
-  color: #666;
-}
-
-.food-item-card__popup {
+/* === FULL-COVER HOVER CARD === */
+.food-item-card__hovercard {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 220px;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 8px;
+  inset: -8px; /* extend a bit so shadow isn't clipped */
+  background: #fafaf5;
+  font-family: "Inter";
+  border-radius: 12px;
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.18);
   padding: 12px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  z-index: 10;
+  z-index: 100; /* above neighboring tiles */
+  opacity: 0; /* hidden by default */
+  transform: translateY(4px) scale(0.98);
+  pointer-events: none; /* ignore mouse when hidden */
+  transition: opacity 0.15s ease, transform 0.15s ease;
 }
 
+/* visible state (on hover) */
+.food-item-card__hovercard.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto; /* allow clicks inside the card */
+}
+
+/* Optional: tighter text styling */
 .popup__title {
-  margin: 8px 0 4px;
+  margin: 6px 0 4px;
+  font-weight: 700;
   font-size: 0.9rem;
-  font-weight: bold;
 }
-
 .popup__text {
   margin: 0 0 8px;
   font-size: 0.85rem;
-  color: #333;
+  line-height: 1.35;
 }

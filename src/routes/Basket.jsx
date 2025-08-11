@@ -68,16 +68,24 @@ export default function Basket() {
       <footer className="basket-footer">
         <div className="totals">
           <p>
-            <strong>Total Calories:</strong> {totalCalories} kcal
+            <strong>Total Calories:</strong> {totalCalories} kcal
           </p>
-          <p>
-            <strong>Carbs:</strong> {macros.carbs.toFixed(1)} g 
-            <strong>Protein:</strong> {macros.protein.toFixed(1)} g 
-            <strong>Fat:</strong> {macros.fat.toFixed(1)} g
+
+          <p className="macro-row">
+            <span className="macro">
+              <strong>Carbs:</strong> {macros.carbs.toFixed(1)} g
+            </span>
+            <span className="macro">
+              <strong>Protein:</strong> {macros.protein.toFixed(1)} g
+            </span>
+            <span className="macro">
+              <strong>Fat:</strong> {macros.fat.toFixed(1)} g
+            </span>
           </p>
         </div>
+
         <Button onClick={clearBasket}>Clear</Button>
-        <Button to="/receipt" icon="arrow">
+        <Button to="/summary" icon="arrow">
           Checkout
         </Button>
       </footer>

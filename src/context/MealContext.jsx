@@ -11,7 +11,9 @@ import { loadBasket, saveBasket } from "../utils/storage.js";
 const MealContext = createContext();
 
 export function MealProvider({ children }) {
-  const [selectedGroup, setSelectedGroup] = useState();
+  //for updating current grp in food rack and array of objects in basket
+  const [selectedGroup, setSelectedGroup] = useState("fruits");
+  //get items from local storage
   const [basket, setBasket] = useState(() => loadBasket());
   useEffect(() => {
     saveBasket(basket);
