@@ -8,6 +8,6 @@ A website that aims to educate the user on nutrition and promote a balanced diet
 git clone https://github.com/vienna601/HealthiMart.git
 git pull origin main --rebase
 git add .
-git commit -m "Add Unit 1 submission - your-name"
+git commit -m "message-here"
 git push origin main
 ```
