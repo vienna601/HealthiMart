@@ -1,12 +1,34 @@
-import React from "react";
+import React, { useMemo } from "react";
 import Button from "../components/Button.jsx"; 
 import { useMealContext } from "../context/MealContext.jsx";
+import { useNutritionCalc } from "../hooks/useNutritionCalc.js"; 
+import { compareToRDI, formatNutrients } from "../utils/nutrientHelpers.js";
+import StarRating from "../components/StarRating.jsx";
 import HeaderBar from "../components/HeaderBar.jsx";
 import "../styles/Summary.css";
 
 export default function Summary() {
   const { basket } = useMealContext();
+  const { totalCalories, macros, macroRatios } = useNutritionCalc(basket);
   const itemCount = basket.length; 
+
+  const avgRatio =
+    (macroRatios.carbs + macroRatios.protein + macroRatios.fat) / 3;
+  const starCount = Math.round(Math.min(avgRatio, 1) * 5);
+
+    const { bestItem, worstItem } = useMemo(() => {
+      if (basket.length === 0) return {};
+      // score each item by sum of its macro ratios
+      const scored = basket.map((item) => {
+        const r = compareToRDI(item.nutrients);
+        return { item, score: r.carbs + r.protein + r.fat };
+      });
+      scored.sort((a, b) => b.score - a.score);
+      return {
+        bestItem: scored[0].item,
+        worstItem: scored[scored.length - 1].item,
+      };
+    }, [basket]);
 
   const nutrients = {
     macronutrients: {
@@ -33,8 +55,23 @@ export default function Summary() {
     },
   };
 
-  const funFact = "Some fun facts about anything on nutrition.";
-  const suggestions = "Green, yellow or red to warn or suggest a change in their meal + what they're missing";
+  const funFacts = [
+    "Did you know that Vitamin C helps your body absorb iron more effectively? Pair your iron-rich foods with some citrus!",
+    "Omega-3 fatty acids, found in fish like salmon and chia seeds, are crucial for brain health and can help reduce inflammation.",
+    "Fiber, a type of carbohydrate, is essential for digestive health and can help regulate blood sugar levels. It's not just about regularity!",
+    "Proteins are the building blocks of your body, essential for repairing tissues, making enzymes, and transporting oxygen.",
+    "Calcium is not just for strong bones and teeth; it also plays a vital role in muscle function and nerve signaling.",
+    "Iron is a key component of hemoglobin, the protein in red blood cells that carries oxygen from your lungs to the rest of your body.",
+    "Electrolytes like sodium, potassium, and chloride are crucial for maintaining fluid balance, nerve impulses, and muscle contractions.",
+    "B vitamins, a group of eight different vitamins, are essential for converting food into energy and for proper nerve function.",
+    "Did you know that water is considered an essential nutrient? It makes up about 60% of your body weight and is involved in countless bodily functions!",
+    "Magnesium, often overlooked, is involved in over 300 biochemical reactions in the body, including muscle and nerve function, blood glucose control, and blood pressure regulation."
+  ];
+
+  const randomIndex = Math.floor(Math.random() * funFacts.length);
+  const selectedFunFact = funFacts[randomIndex];
+
+  const suggestions = "Consider adding more leafy greens to boost your vitamin intake or incorporating nuts for healthy fats.";
 
   return (
     <div className="summary-page">
@@ -42,6 +79,7 @@ export default function Summary() {
 
       <header className="summary-header">
         <h1 className="summary-title">Summary <span className="item-count">{itemCount} items</span></h1>
+        <StarRating rating={starCount} />
         <div className="summary-header-buttons">
           <Button to="/" className="start-over-button">Start over</Button>
           <Button to="/menu" className="back-button">Back</Button>
@@ -84,10 +122,38 @@ export default function Summary() {
 
         <div className="fun-fact-suggestions-box">
           <h2 className="fun-fact-title">Fun Fact</h2>
-          <p className="fun-fact-text">{funFact}</p>
+          <p className="fun-fact-text">{selectedFunFact}</p>
           
           <h2 className="suggestions-title">Suggestions</h2>
           <p className="suggestions-text">{suggestions}</p>
+        </div>
+        <div className="choices-section">
+          {bestItem && (
+            <div className="choice-card">
+              <h2 className="choice-title">Best choice</h2>
+              <img
+                src={bestItem.imageUrl}
+                alt={bestItem.name}
+                className="choice-img"
+              />
+              <div className="choice-info">
+                <p className="choice-text"><b>{bestItem.name}</b><br/>{bestItem.calories}kcal</p>
+              </div>
+            </div>
+          )}
+          {worstItem && (
+            <div className="choice-card">
+              <h2 className="choice-title">Worst choice</h2>
+              <img
+                src={worstItem.imageUrl}
+                alt={worstItem.name}
+                className="choice-img"
+              />
+              <div className="choice-info">
+                <p className="choice-text"><b>{worstItem.name}</b><br/>{worstItem.calories}kcal</p>
+              </div>
+            </div>
+          )}
         </div>
       </div>
       <footer className="summary-footer-buttons">

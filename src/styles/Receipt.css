@@ -31,33 +31,6 @@
   gap: 2rem;
 }
 
-/* Choices */
-.choices-section {
-  flex: 1;
-  display: flex;
-  gap: 2rem;
-  align-items: flex-start;
-}
-.choice-card {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 1rem;
-  text-align: center;
-  flex: 1;
-}
-.choice-card h3 {
-  margin-top: 0;
-}
-.choice-img {
-  width: 256px;
-  height: auto;
-  border-radius: 6px;
-}
-.choice-info {
-  margin-top: 0.5rem;
-}
-
 /* Footer */
 .receipt-footer {
   padding: 1rem 2rem;
