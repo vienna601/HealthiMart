@@ -1,8 +1,15 @@
 {
   "Apple": {
     "group": "fruits",
+    "serving size": 182,
     "calories": 104,
-    "nutrients": { "carbs": 27.6, "protein": 0.5, "fat": 0.3 },
+    "macros": {
+      "carbs": 25.6,
+      "protein": 0.5,
+      "total fat": 0.3,
+      "saturated fat": 0.1
+    },
+    "micros": { "cholestrol": 0, "sodium": 0.001, "fiber": 4.3, "sugar": 18.8 },
     "funFact": "Apples float because 25% of their volume is air."
   },
   "Banana": {

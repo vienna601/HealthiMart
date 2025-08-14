@@ -5,7 +5,8 @@ export const items = Object.entries(foodMetadata).map(([name, meta], i) => ({
   name,
   group: meta.group,
   calories: meta.calories,
-  nutrients: meta.nutrients,
+  macros: meta.macros,
+  micros: meta.micros,
   funFact: meta.funFact,
   imageUrl: `/assets/images/${name.toLowerCase().replace(/\s+/g, "-")}.png`,
 }));

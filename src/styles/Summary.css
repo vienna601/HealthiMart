@@ -26,9 +26,9 @@
 }
 
 .summary-title {
-  color: #48502F;
-  font-feature-settings: 'liga' off, 'clig' off;
-  font-family: 'Newsreader', serif;
+  color: #48502f;
+  font-feature-settings: "liga" off, "clig" off;
+  font-family: "Newsreader", serif;
   font-size: 64px;
   font-style: normal;
   font-weight: 400;
@@ -54,9 +54,9 @@
   justify-content: center;
   align-items: center;
   border-radius: 20px;
-  background: #7A824F;
-  color: #FFF;
-  font-family: 'Inter', sans-serif;
+  background: #7a824f;
+  color: #fff;
+  font-family: "Inter", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
@@ -71,10 +71,10 @@
   justify-content: center;
   align-items: center;
   border-radius: 20px;
-  border: 1px solid #C2C2C2;
-  background: #FFF;
+  border: 1px solid #c2c2c2;
+  background: #fff;
   color: #000;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
@@ -95,8 +95,8 @@
 
 .meal-name-label {
   color: #000;
-  font-feature-settings: 'liga' off, 'clig' off;
-  font-family: 'Newsreader', serif;
+  font-feature-settings: "liga" off, "clig" off;
+  font-family: "Newsreader", serif;
   font-size: 25px;
   font-style: normal;
   font-weight: 400;
@@ -111,8 +111,8 @@
   height: 54px;
   flex-shrink: 0;
   border-radius: 24px;
-  border: 2px solid #ECECEC;
-  background: #FAFAF5;
+  border: 2px solid #ececec;
+  background: #fafaf5;
   padding: 0 20px;
   font-size: 18px;
   box-sizing: border-box;
@@ -130,12 +130,12 @@
 }
 
 .nutrients-summary-box {
-  width: 686px;
+  width: auto;
   height: 428px;
   flex-shrink: 0;
   border-radius: 24px;
-  border: 2px solid #E6E6E6;
-  background: #FAFAF5;
+  border: 2px solid #e6e6e6;
+  background: #fafaf5;
   padding: 30px;
   box-sizing: border-box;
   display: flex;
@@ -145,8 +145,8 @@
 
 .nutrients-summary-title {
   color: #000;
-  font-feature-settings: 'liga' off, 'clig' off;
-  font-family: 'Inter', sans-serif;
+  font-feature-settings: "liga" off, "clig" off;
+  font-family: "Inter", sans-serif;
   font-size: 25px;
   font-style: normal;
   font-weight: 600;
@@ -170,8 +170,8 @@
 
 .nutrient-category {
   color: #000;
-  font-feature-settings: 'liga' off, 'clig' off;
-  font-family: 'Inter', sans-serif;
+  font-feature-settings: "liga" off, "clig" off;
+  font-family: "Inter", sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
@@ -181,8 +181,8 @@
 
 .nutrient-item {
   color: #000;
-  font-feature-settings: 'liga' off, 'clig' off;
-  font-family: 'Inter', sans-serif;
+  font-feature-settings: "liga" off, "clig" off;
+  font-family: "Inter", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -196,8 +196,8 @@
 
 .nutrient-item-sub {
   color: #000;
-  font-feature-settings: 'liga' off, 'clig' off;
-  font-family: 'Inter', sans-serif;
+  font-feature-settings: "liga" off, "clig" off;
+  font-family: "Inter", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -212,8 +212,8 @@
 .nutrient-value {
   color: #000;
   text-align: right;
-  font-feature-settings: 'liga' off, 'clig' off;
-  font-family: 'Inter', sans-serif;
+  font-feature-settings: "liga" off, "clig" off;
+  font-family: "Inter", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -227,11 +227,11 @@
   height: 428px;
   flex-shrink: 0;
   border-radius: 24px;
-  border: 2px solid #ECECEC;
-  background: #FAFAF5;
+  border: 2px solid #ececec;
+  background: #fafaf5;
   padding: 30px;
   box-sizing: border-box;
-  
+
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -240,8 +240,8 @@
 
 .fun-fact-title {
   color: #000;
-  font-feature-settings: 'liga' off, 'clig' off;
-  font-family: 'Inter', sans-serif;
+  font-feature-settings: "liga" off, "clig" off;
+  font-family: "Inter", sans-serif;
   font-size: 25px;
   font-style: normal;
   font-weight: 600;
@@ -252,8 +252,8 @@
 .fun-fact-text {
   width: 100%;
   color: #000;
-  font-feature-settings: 'liga' off, 'clig' off;
-  font-family: 'Inter', sans-serif;
+  font-feature-settings: "liga" off, "clig" off;
+  font-family: "Inter", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -263,8 +263,8 @@
 
 .suggestions-title {
   color: #000;
-  font-feature-settings: 'liga' off, 'clig' off;
-  font-family: 'Inter', sans-serif;
+  font-feature-settings: "liga" off, "clig" off;
+  font-family: "Inter", sans-serif;
   font-size: 25px;
   font-style: normal;
   font-weight: 600;
@@ -275,8 +275,8 @@
 .suggestions-text {
   width: 100%;
   color: #000;
-  font-feature-settings: 'liga' off, 'clig' off;
-  font-family: 'Inter', sans-serif;
+  font-feature-settings: "liga" off, "clig" off;
+  font-family: "Inter", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -296,11 +296,11 @@
   height: 428px;
   flex-shrink: 0;
   border-radius: 24px;
-  border: 2px solid #ECECEC;
-  background: #FAFAF5;
+  border: 2px solid #ececec;
+  background: #fafaf5;
   padding: 30px;
   box-sizing: border-box;
-  
+
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -316,8 +316,8 @@
 
 .choice-title {
   color: #000;
-  font-feature-settings: 'liga' off, 'clig' off;
-  font-family: 'Inter', sans-serif;
+  font-feature-settings: "liga" off, "clig" off;
+  font-family: "Inter", sans-serif;
   font-size: 25px;
   font-style: normal;
   font-weight: 600;
@@ -328,8 +328,8 @@
 .choice-text {
   width: 100%;
   color: #000;
-  font-feature-settings: 'liga' off, 'clig' off;
-  font-family: 'Inter', sans-serif;
+  font-feature-settings: "liga" off, "clig" off;
+  font-family: "Inter", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -341,11 +341,11 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  
+
   position: absolute;
-  bottom: 20px; 
-  right: 20px; 
-  align-items: flex-end; 
+  bottom: 20px;
+  right: 20px;
+  align-items: flex-end;
   z-index: 10;
 }
 
@@ -355,9 +355,9 @@
   padding: 14px 198px 13px 24px;
   align-items: center;
   border-radius: 8px;
-  background: #7A824F;
-  color: #FFF;
-  font-family: 'Inter', sans-serif;
+  background: #7a824f;
+  color: #fff;
+  font-family: "Inter", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;

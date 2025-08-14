@@ -1,6 +1,6 @@
 .food-item-card {
   position: relative;
-  width: 256px;
+  width: autopx;
   /* keep the base tile simple; avoid borders that change size on hover */
   background: transparent; /* let the shelf show through */
   border-radius: 10px;

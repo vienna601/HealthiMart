@@ -3,6 +3,7 @@ import NutrientList from "../components/NutrientList.jsx";
 import { compareToRDI } from "../utils/nutrientHelpers.js";
 import Button from "../components/Button.jsx";
 import HeaderBar from "../components/HeaderBar.jsx";
+import { formatNutrients } from "../utils/nutrientHelpers.js";
 import "../styles/Basket.css";
 
 export default function Basket() {
@@ -68,7 +69,7 @@ export default function Basket() {
       <footer className="basket-footer">
         <div className="totals">
           <p>
-            <strong>Total Calories:</strong> {totalCalories} kcal
+            <strong>Total Calories:</strong> {totalCalories.toFixed(2)} kcal
           </p>
 
           <p className="macro-row">
@@ -85,9 +86,16 @@ export default function Basket() {
         </div>
 
         <Button onClick={clearBasket}>Clear</Button>
-        <Button to="/summary" icon="arrow">
-          Checkout
+        <Button to="/rack" className="back-button">
+          Back
         </Button>
+        {basket.length === 0 ? (
+          <p></p>
+        ) : (
+          <Button to="/summary" icon="arrow">
+            Checkout
+          </Button>
+        )}
       </footer>
     </div>
   );
