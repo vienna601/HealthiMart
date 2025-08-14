@@ -170,7 +170,7 @@ export default function Summary() {
         </div>
       </div>
       <footer className="summary-footer-buttons">
-        <Button to="/share" className="share-meal-button">Share your meal</Button>
+        {/* <Button to="/share" className="share-meal-button">Share your meal</Button> */}
         <Button to="/" className="build-next-meal-button">Build your next meal</Button>
       </footer>
     </div>
