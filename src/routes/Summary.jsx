@@ -12,13 +12,22 @@ export default function Summary() {
   const { totalCalories, macros, macroRatios } = useNutritionCalc(basket);
   const itemCount = basket.length; 
 
+  const combinedName = useMemo(() => {
+      if (basket.length === 0) return "";
+      if (basket.length === 1) return basket[0].name;
+      const picks = new Set();
+      while (picks.size < 2) {
+        picks.add(basket[Math.floor(Math.random() * basket.length)].name);
+      }
+      return Array.from(picks).join(" ");
+    }, [basket]);
+
   const avgRatio =
     (macroRatios.carbs + macroRatios.protein + macroRatios.fat) / 3;
   const starCount = Math.round(Math.min(avgRatio, 1) * 5);
 
     const { bestItem, worstItem } = useMemo(() => {
       if (basket.length === 0) return {};
-      // score each item by sum of its macro ratios
       const scored = basket.map((item) => {
         const r = compareToRDI(item.nutrients);
         return { item, score: r.carbs + r.protein + r.fat };
@@ -29,6 +38,13 @@ export default function Summary() {
         worstItem: scored[scored.length - 1].item,
       };
     }, [basket]);
+
+    // for (const item of basket) {
+    //   totalCalories += item.calories;
+    //   macros.carbs += item.nutrients.carbs;
+    //   macros.protein += item.nutrients.protein;
+    //   macros.fat += item.nutrients.fat;
+    // }
 
   const nutrients = {
     macronutrients: {
@@ -79,17 +95,14 @@ export default function Summary() {
 
       <header className="summary-header">
         <h1 className="summary-title">Summary <span className="item-count">{itemCount} items</span></h1>
-        <StarRating rating={starCount} />
         <div className="summary-header-buttons">
           <Button to="/" className="start-over-button">Start over</Button>
           <Button to="/menu" className="back-button">Back</Button>
         </div>
       </header>
 
-      <div className="meal-naming-section">
-        <p className="meal-name-label">Name your meal:</p>
-        <input type="text" className="meal-name-input" placeholder="" />
-      </div>
+      <h1 className="summary-title">{combinedName} &nbsp; &nbsp; &nbsp; &nbsp;<StarRating rating={starCount} /></h1>
+      <h1> </h1>
 
       <div className="content-grid">
         <div className="nutrients-summary-box">
