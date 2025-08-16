@@ -1,297 +1,866 @@
 {
   "Apple": {
     "group": "fruits",
-    "serving size": 182,
-    "calories": 104,
+    "serving size": 182.0,
+    "calories": 96.4,
     "macros": {
       "carbs": 25.6,
       "protein": 0.5,
-      "total fat": 0.3,
-      "saturated fat": 0.1
+      "fat": 0.3
     },
-    "micros": { "cholestrol": 0, "sodium": 0.001, "fiber": 4.3, "sugar": 18.8 },
+    "micros": {
+      "cholesterol": 0,
+      "sodium": 1,
+      "potassium": 20,
+      "fiber": 4.3,
+      "sugar": 18.8
+    },
     "funFact": "Apples float because 25% of their volume is air."
   },
   "Banana": {
     "group": "fruits",
-    "calories": 105,
-    "nutrients": { "carbs": 26.95, "protein": 1.29, "fat": 0.39 },
-    "funFact": "Bananas are berries, but strawberries aren’t."
+    "calories": 105.5,
+    "funFact": "Bananas are berries, but strawberries aren’t.",
+    "serving size": 118.0,
+    "micros": {
+      "cholesterol": 0,
+      "sodium": 1,
+      "potassium": 26,
+      "fiber": 3.0,
+      "sugar": 14.5
+    },
+    "macros": {
+      "carbs": 27.4,
+      "protein": 1.3,
+      "fat": 0.4
+    }
   },
   "Spinach": {
     "group": "vegetables",
-    "calories": 23,
-    "nutrients": { "carbs": 3.6, "protein": 3.0, "fat": 0.0 },
-    "funFact": "Spinach plants are dioecious—individual plants are either male or female."
+    "calories": 42.0,
+    "funFact": "Spinach plants are dioecious—individual plants are either male or female.",
+    "serving size": 180.0,
+    "micros": {
+      "cholesterol": 0,
+      "sodium": 125,
+      "potassium": 99,
+      "fiber": 4.4,
+      "sugar": 0.8
+    },
+    "macros": {
+      "carbs": 6.8,
+      "protein": 5.3,
+      "fat": 0.5
+    }
   },
   "Carrot": {
     "group": "vegetables",
-    "calories": 25.01,
-    "nutrients": { "carbs": 5.84, "protein": 0.57, "fat": 0.15 },
-    "funFact": "Before the 17th century most carrots were purple; orange ones were bred in the Netherlands."
+    "calories": 15.6,
+    "funFact": "Before the 17th century most carrots were purple; orange ones were bred in the Netherlands.",
+    "serving size": 46.0,
+    "micros": {
+      "cholesterol": 0,
+      "sodium": 26,
+      "potassium": 13,
+      "fiber": 1.4,
+      "sugar": 1.6
+    },
+    "macros": {
+      "carbs": 3.8,
+      "protein": 0.4,
+      "fat": 0.1
+    }
   },
   "Brown Rice": {
     "group": "grains",
-    "calories": 248,
-    "nutrients": { "carbs": 52, "protein": 5.5, "fat": 2 },
-    "funFact": "One cup of cooked brown rice supplies about 86% of your daily manganese needs."
+    "calories": 107.3,
+    "funFact": "One cup of cooked brown rice supplies about 86% of your daily manganese needs.",
+    "serving size": 97.5,
+    "micros": {
+      "cholesterol": 0,
+      "sodium": 0,
+      "potassium": 75,
+      "fiber": 1.7,
+      "sugar": 0.0
+    },
+    "macros": {
+      "carbs": 22.5,
+      "protein": 2.3,
+      "fat": 0.8
+    }
   },
   "Whole Wheat Bread": {
     "group": "grains",
-    "calories": 80,
-    "nutrients": { "carbs": 20, "protein": 5, "fat": 1 },
-    "funFact": "Its insoluble fiber acts as a prebiotic, feeding beneficial gut bacteria."
+    "calories": 78.8,
+    "funFact": "Its insoluble fiber acts as a prebiotic, feeding beneficial gut bacteria.",
+    "serving size": 32.0,
+    "micros": {
+      "cholesterol": 0,
+      "sodium": 145,
+      "potassium": 66,
+      "fiber": 1.9,
+      "sugar": 1.4
+    },
+    "macros": {
+      "carbs": 13.6,
+      "protein": 4.0,
+      "fat": 1.1
+    }
   },
   "Milk": {
     "group": "dairy",
-    "calories": 152,
-    "nutrients": { "carbs": 12, "protein": 8.14, "fat": 8 },
-    "funFact": "Over six billion people worldwide consume milk and dairy products."
+    "calories": 51.3,
+    "funFact": "Over six billion people worldwide consume milk and dairy products.",
+    "serving size": 100,
+    "micros": {
+      "cholesterol": 8,
+      "sodium": 52,
+      "potassium": 100,
+      "fiber": 0,
+      "sugar": 0
+    },
+    "macros": {
+      "carbs": 4.9,
+      "protein": 3.5,
+      "fat": 1.9
+    }
   },
   "Yogurt": {
     "group": "dairy",
-    "calories": 61,
-    "nutrients": { "carbs": 4.7, "protein": 3.5, "fat": 3.3 },
-    "funFact": "The first discovered probiotic was Lactobacillus bulgaricus, found in Bulgarian yoghurt."
+    "calories": 109.2,
+    "funFact": "The first discovered probiotic was Lactobacillus bulgaricus, found in Bulgarian yoghurt.",
+    "serving size": 170.0,
+    "micros": {
+      "cholesterol": 10,
+      "sodium": 117,
+      "potassium": 246,
+      "fiber": 0.0,
+      "sugar": 12.1
+    },
+    "macros": {
+      "carbs": 12.2,
+      "protein": 9.0,
+      "fat": 2.7
+    }
   },
   "Chicken Breast": {
     "group": "protein",
-    "calories": 165,
-    "nutrients": { "carbs": 0, "protein": 31, "fat": 3.6 },
-    "funFact": "Chickens now outnumber humans more than two to one—with over 75 billion raised yearly."
+    "calories": 199.5,
+    "funFact": "Chickens now outnumber humans more than two to one—with over 75 billion raised yearly.",
+    "serving size": 120.0,
+    "micros": {
+      "cholesterol": 102,
+      "sodium": 87,
+      "potassium": 272,
+      "fiber": 0.0,
+      "sugar": 0.0
+    },
+    "macros": {
+      "carbs": 0.0,
+      "protein": 37.2,
+      "fat": 4.3
+    }
   },
   "Lentils": {
     "group": "protein",
-    "calories": 114,
-    "nutrients": { "carbs": 20, "protein": 9, "fat": 0.4 },
-    "funFact": "Lentils contain the highest folate per gram of all plant-based foods."
+    "calories": 230.1,
+    "funFact": "Lentils contain the highest folate per gram of all plant-based foods.",
+    "serving size": 198.0,
+    "micros": {
+      "cholesterol": 0,
+      "sodium": 474,
+      "potassium": 354,
+      "fiber": 15.9,
+      "sugar": 3.6
+    },
+    "macros": {
+      "carbs": 39.0,
+      "protein": 17.7,
+      "fat": 0.8
+    }
   },
   "Avocado": {
     "group": "fats",
-    "calories": 322,
-    "nutrients": { "carbs": 17, "protein": 4, "fat": 30 },
-    "funFact": "One avocado provides about 975 mg of potassium—more than twice that of a banana."
+    "calories": 227.3,
+    "funFact": "One avocado provides about 975 mg of potassium—more than twice that of a banana.",
+    "serving size": 136.0,
+    "micros": {
+      "cholesterol": 0,
+      "sodium": 10,
+      "potassium": 74,
+      "fiber": 9.2,
+      "sugar": 0.4
+    },
+    "macros": {
+      "carbs": 11.7,
+      "protein": 2.7,
+      "fat": 21.2
+    }
   },
   "Olive Oil": {
     "group": "fats",
-    "calories": 119,
-    "nutrients": { "carbs": 0, "protein": 0, "fat": 13.5 },
-    "funFact": "Extra‑virgin olive oil is rich in polyphenols like oleocanthal, which have anti‑inflammatory effects."
+    "calories": 117.3,
+    "funFact": "Extra‑virgin olive oil is rich in polyphenols like oleocanthal, which have anti‑inflammatory effects.",
+    "serving size": 13.5,
+    "micros": {
+      "cholesterol": 0,
+      "sodium": 0,
+      "potassium": 0,
+      "fiber": 0.0,
+      "sugar": 0.0
+    },
+    "macros": {
+      "carbs": 0.0,
+      "protein": 0.0,
+      "fat": 13.7
+    }
   },
   "Almonds": {
     "group": "fats",
-    "calories": 576,
-    "nutrients": { "carbs": 21.7, "protein": 21.2, "fat": 49.4 },
-    "funFact": "Almonds contain more vitamin E than any other nut."
+    "calories": 7.8,
+    "funFact": "Almonds contain more vitamin E than any other nut.",
+    "serving size": 1.29,
+    "micros": {
+      "cholesterol": 0,
+      "sodium": 6,
+      "potassium": 6,
+      "fiber": 0.1,
+      "sugar": 0.1
+    },
+    "macros": {
+      "carbs": 0.3,
+      "protein": 0.3,
+      "fat": 0.7
+    }
   },
   "Chia Seeds": {
     "group": "fats",
-    "calories": 486,
-    "nutrients": { "carbs": 42.1, "protein": 16.5, "fat": 30.7 },
-    "funFact": "Chia seeds can absorb up to 12 times their weight in water."
+    "calories": 57.0,
+    "funFact": "Chia seeds can absorb up to 12 times their weight in water.",
+    "serving size": 12.0,
+    "micros": {
+      "cholesterol": 0,
+      "sodium": 1,
+      "potassium": 103,
+      "fiber": 4.1,
+      "sugar": 0.0
+    },
+    "macros": {
+      "carbs": 5.1,
+      "protein": 2.0,
+      "fat": 3.7
+    }
   },
   "Peanut Butter": {
     "group": "fats",
-    "calories": 588,
-    "nutrients": { "carbs": 20, "protein": 25, "fat": 50 },
-    "funFact": "Peanut butter was invented in 1890 by Marcellus Gilmore Edson."
+    "calories": 185.5,
+    "funFact": "Peanut butter was invented in 1890 by Marcellus Gilmore Edson.",
+    "serving size": 32.0,
+    "micros": {
+      "cholesterol": 0,
+      "sodium": 152,
+      "potassium": 107,
+      "fiber": 1.8,
+      "sugar": 2.1
+    },
+    "macros": {
+      "carbs": 7.7,
+      "protein": 7.1,
+      "fat": 15.9
+    }
   },
   "Sunflower Oil": {
     "group": "fats",
-    "calories": 884,
-    "nutrients": { "carbs": 0, "protein": 0, "fat": 100 },
-    "funFact": "Sunflower oil is rich in vitamin E antioxidants."
+    "calories": 121.8,
+    "funFact": "Sunflower oil is rich in vitamin E antioxidants.",
+    "serving size": 14.0,
+    "micros": {
+      "cholesterol": 0,
+      "sodium": 0,
+      "potassium": 0,
+      "fiber": 0.0,
+      "sugar": 0.0
+    },
+    "macros": {
+      "carbs": 0.0,
+      "protein": 0.0,
+      "fat": 13.9
+    }
   },
   "Walnuts": {
     "group": "fats",
-    "calories": 654,
-    "nutrients": { "carbs": 13.7, "protein": 15.2, "fat": 65.2 },
-    "funFact": "Walnuts are one of the richest plant sources of omega‑3 ALA and support brain health."
+    "calories": 13.5,
+    "funFact": "Walnuts are one of the richest plant sources of omega‑3 ALA and support brain health.",
+    "serving size": 2.03,
+    "micros": {
+      "cholesterol": 0,
+      "sodium": 0,
+      "potassium": 7,
+      "fiber": 0.1,
+      "sugar": 0.0
+    },
+    "macros": {
+      "carbs": 0.3,
+      "protein": 0.3,
+      "fat": 1.3
+    }
   },
   "Coconut Oil": {
     "group": "fats",
-    "calories": 892,
-    "nutrients": { "carbs": 0, "protein": 0, "fat": 100 },
-    "funFact": "Coconut oil is high in medium‑chain triglycerides (MCTs)."
+    "calories": 119.9,
+    "funFact": "Coconut oil is high in medium‑chain triglycerides (MCTs).",
+    "serving size": 13.6,
+    "micros": {
+      "cholesterol": 0,
+      "sodium": 0,
+      "potassium": 0,
+      "fiber": 0.0,
+      "sugar": 0.0
+    },
+    "macros": {
+      "carbs": 0.0,
+      "protein": 0.0,
+      "fat": 13.4
+    }
   },
   "Turkey Breast": {
     "group": "protein",
-    "calories": 135,
-    "nutrients": { "carbs": 0, "protein": 29, "fat": 1 },
-    "funFact": "Turkey breast is particularly high in niacin (vitamin B3)."
+    "calories": 125.0,
+    "funFact": "Turkey breast is particularly high in niacin (vitamin B3).",
+    "serving size": 85.0,
+    "micros": {
+      "cholesterol": 68,
+      "sodium": 82,
+      "potassium": 196,
+      "fiber": 0.0,
+      "sugar": 0.0
+    },
+    "macros": {
+      "carbs": 0.0,
+      "protein": 25.6,
+      "fat": 1.8
+    }
   },
   "Tofu": {
     "group": "protein",
-    "calories": 76,
-    "nutrients": { "carbs": 1.9, "protein": 8, "fat": 4 },
-    "funFact": "Tofu originated in China over 2,000 years ago."
+    "calories": 74.4,
+    "funFact": "Tofu originated in China over 2,000 years ago.",
+    "serving size": 91.0,
+    "micros": {
+      "cholesterol": 0,
+      "sodium": 3,
+      "potassium": 101,
+      "fiber": 0.9,
+      "sugar": 0.6
+    },
+    "macros": {
+      "carbs": 1.1,
+      "protein": 9.1,
+      "fat": 4.7
+    }
   },
   "Salmon": {
     "group": "protein",
-    "calories": 208,
-    "nutrients": { "carbs": 0, "protein": 20, "fat": 13 },
-    "funFact": "Salmon are one of the few food sources of vitamin D."
+    "calories": 473.6,
+    "funFact": "Salmon are one of the few food sources of vitamin D.",
+    "serving size": 227.0,
+    "micros": {
+      "cholesterol": 144,
+      "sodium": 138,
+      "potassium": 574,
+      "fiber": 0.0,
+      "sugar": 0.0
+    },
+    "macros": {
+      "carbs": 0.0,
+      "protein": 49.9,
+      "fat": 27.5
+    }
   },
   "Black Beans": {
     "group": "protein",
-    "calories": 339,
-    "nutrients": { "carbs": 62, "protein": 21, "fat": 1.4 },
-    "funFact": "Black beans were domesticated in South America over 7,000 years ago."
+    "calories": 228.0,
+    "funFact": "Black beans were domesticated in South America over 7,000 years ago.",
+    "serving size": 172.0,
+    "micros": {
+      "cholesterol": 0,
+      "sodium": 1,
+      "potassium": 243,
+      "fiber": 15.1,
+      "sugar": 0.6
+    },
+    "macros": {
+      "carbs": 41.1,
+      "protein": 15.2,
+      "fat": 0.9
+    }
   },
   "Beef Steak": {
     "group": "protein",
-    "calories": 271,
-    "nutrients": { "carbs": 0, "protein": 26, "fat": 18 },
-    "funFact": "Beef steak is a natural source of creatine."
+    "calories": 626.8,
+    "funFact": "Beef steak is a natural source of creatine.",
+    "serving size": 221.0,
+    "micros": {
+      "cholesterol": 217,
+      "sodium": 115,
+      "potassium": 426,
+      "fiber": 0.0,
+      "sugar": 0.0
+    },
+    "macros": {
+      "carbs": 0.0,
+      "protein": 57.7,
+      "fat": 40.6
+    }
   },
   "Tuna": {
     "group": "protein",
-    "calories": 132,
-    "nutrients": { "carbs": 0, "protein": 29, "fat": 1 },
-    "funFact": "Tuna is one of the highest‑protein, lowest‑fat fish."
+    "calories": 113.3,
+    "funFact": "Tuna is one of the highest‑protein, lowest‑fat fish.",
+    "serving size": 85.0,
+    "micros": {
+      "cholesterol": 39,
+      "sodium": 46,
+      "potassium": 282,
+      "fiber": 0.0,
+      "sugar": 0.0
+    },
+    "macros": {
+      "carbs": 0.0,
+      "protein": 25.0,
+      "fat": 0.5
+    }
   },
   "Cottage Cheese": {
     "group": "dairy",
-    "calories": 98,
-    "nutrients": { "carbs": 3.4, "protein": 11.1, "fat": 4.3 },
-    "funFact": "Cottage cheese dates back to the Roman Empire."
+    "calories": 106.9,
+    "funFact": "Cottage cheese dates back to the Roman Empire.",
+    "serving size": 108.75,
+    "micros": {
+      "cholesterol": 18,
+      "sodium": 402,
+      "potassium": 175,
+      "fiber": 0.0,
+      "sugar": 2.9
+    },
+    "macros": {
+      "carbs": 3.6,
+      "protein": 12.1,
+      "fat": 4.6
+    }
   },
   "Ricotta Cheese": {
     "group": "dairy",
-    "calories": 174,
-    "nutrients": { "carbs": 3.1, "protein": 11.3, "fat": 13.5 },
-    "funFact": "Ricotta means “recooked” in Italian."
+    "calories": 174.2,
+    "funFact": "Ricotta means “recooked” in Italian.",
+    "serving size": 124.0,
+    "micros": {
+      "cholesterol": 37,
+      "sodium": 120,
+      "potassium": 223,
+      "fiber": 0.0,
+      "sugar": 0.4
+    },
+    "macros": {
+      "carbs": 6.3,
+      "protein": 14.2,
+      "fat": 9.9
+    }
   },
   "Mozzarella Cheese": {
     "group": "dairy",
-    "calories": 280,
-    "nutrients": { "carbs": 3.1, "protein": 28, "fat": 17 },
-    "funFact": "Mozzarella was originally made from water buffalo milk in Italy."
+    "calories": 85.3,
+    "funFact": "Mozzarella was originally made from water buffalo milk in Italy.",
+    "serving size": 28.35,
+    "micros": {
+      "cholesterol": 22,
+      "sodium": 176,
+      "potassium": 98,
+      "fiber": 0.0,
+      "sugar": 0.3
+    },
+    "macros": {
+      "carbs": 0.6,
+      "protein": 6.3,
+      "fat": 6.4
+    }
   },
   "Sour Cream": {
     "group": "dairy",
-    "calories": 193,
-    "nutrients": { "carbs": 4.6, "protein": 2.4, "fat": 19.9 },
-    "funFact": "Sour cream originated in Eastern Europe."
+    "calories": 23.1,
+    "funFact": "Sour cream originated in Eastern Europe.",
+    "serving size": 12.0,
+    "micros": {
+      "cholesterol": 7,
+      "sodium": 3,
+      "potassium": 9,
+      "fiber": 0.0,
+      "sugar": 0.4
+    },
+    "macros": {
+      "carbs": 0.6,
+      "protein": 0.3,
+      "fat": 2.4
+    }
   },
   "Butter": {
     "group": "dairy",
-    "calories": 717,
-    "nutrients": { "carbs": 0.1, "protein": 0.9, "fat": 81 },
-    "funFact": "Butter is believed to have been made around 8000 BCE."
+    "calories": 102.5,
+    "funFact": "Butter is believed to have been made around 8000 BCE.",
+    "serving size": 14.2,
+    "micros": {
+      "cholesterol": 30,
+      "sodium": 90,
+      "potassium": 3,
+      "fiber": 0.0,
+      "sugar": 0.0
+    },
+    "macros": {
+      "carbs": 0.0,
+      "protein": 0.1,
+      "fat": 11.3
+    }
   },
   "Kefir": {
     "group": "dairy",
-    "calories": 64,
-    "nutrients": { "carbs": 4, "protein": 3.3, "fat": 3.2 },
-    "funFact": "Kefir grains are a symbiotic culture of bacteria and yeasts."
+    "calories": 114.4,
+    "funFact": "Kefir grains are a symbiotic culture of bacteria and yeasts.",
+    "serving size": 249.0,
+    "micros": {
+      "cholesterol": 10,
+      "sodium": 464,
+      "potassium": 275,
+      "fiber": 0.1,
+      "sugar": 11.8
+    },
+    "macros": {
+      "carbs": 12.0,
+      "protein": 11.2,
+      "fat": 2.2
+    }
   },
   "Barley": {
     "group": "grains",
-    "calories": 354,
-    "nutrients": { "carbs": 73.5, "protein": 12.5, "fat": 2.3 },
-    "funFact": "Barley is one of the oldest cultivated grains, dating back 10,000 years."
+    "calories": 196.0,
+    "funFact": "Barley is one of the oldest cultivated grains, dating back 10,000 years.",
+    "serving size": 157.0,
+    "micros": {
+      "cholesterol": 0,
+      "sodium": 4,
+      "potassium": 86,
+      "fiber": 6.1,
+      "sugar": 0.4
+    },
+    "macros": {
+      "carbs": 44.9,
+      "protein": 3.5,
+      "fat": 0.7
+    }
   },
   "Quinoa": {
     "group": "grains",
-    "calories": 120,
-    "nutrients": { "carbs": 21.3, "protein": 4.4, "fat": 1.9 },
-    "funFact": "Quinoa is technically a seed, not a grain."
+    "calories": 112.7,
+    "funFact": "Quinoa is technically a seed, not a grain.",
+    "serving size": 92.5,
+    "micros": {
+      "cholesterol": 0,
+      "sodium": 6,
+      "potassium": 141,
+      "fiber": 2.6,
+      "sugar": 0.8
+    },
+    "macros": {
+      "carbs": 19.4,
+      "protein": 4.1,
+      "fat": 1.8
+    }
   },
   "Corn Tortilla": {
     "group": "grains",
-    "calories": 218,
-    "nutrients": { "carbs": 46, "protein": 5.7, "fat": 2.7 },
-    "funFact": "Corn tortillas were a staple of the Aztec diet."
+    "calories": 51.0,
+    "funFact": "Corn tortillas were a staple of the Aztec diet.",
+    "serving size": 24.0,
+    "micros": {
+      "cholesterol": 0,
+      "sodium": 10,
+      "potassium": 74,
+      "fiber": 1.5,
+      "sugar": 0.2
+    },
+    "macros": {
+      "carbs": 10.9,
+      "protein": 1.4,
+      "fat": 0.7
+    }
   },
   "Buckwheat": {
     "group": "grains",
-    "calories": 343,
-    "nutrients": { "carbs": 71.5, "protein": 13.3, "fat": 3.4 },
-    "funFact": "Buckwheat is related to rhubarb and sorrel."
+    "calories": 155.5,
+    "funFact": "Buckwheat is related to rhubarb and sorrel.",
+    "serving size": 168.0,
+    "micros": {
+      "cholesterol": 0,
+      "sodium": 6,
+      "potassium": 117,
+      "fiber": 4.6,
+      "sugar": 1.5
+    },
+    "macros": {
+      "carbs": 33.8,
+      "protein": 5.7,
+      "fat": 1.0
+    }
   },
   "Rye": {
     "group": "grains",
-    "calories": 338,
-    "nutrients": { "carbs": 76.3, "protein": 10.3, "fat": 1.6 },
-    "funFact": "Rye bread has been a staple in Eastern Europe for centuries."
+    "calories": 83.2,
+    "funFact": "Rye bread has been a staple in Eastern Europe for centuries.",
+    "serving size": 32.0,
+    "micros": {
+      "cholesterol": 0,
+      "sodium": 196,
+      "potassium": 40,
+      "fiber": 1.9,
+      "sugar": 1.2
+    },
+    "macros": {
+      "carbs": 15.6,
+      "protein": 2.7,
+      "fat": 1.1
+    }
   },
   "Spaghetti": {
     "group": "grains",
-    "calories": 157,
-    "nutrients": { "carbs": 30.9, "protein": 5.8, "fat": 0.9 },
-    "funFact": "Spaghetti is one of the world's most popular pasta shapes."
+    "calories": 215.7,
+    "funFact": "Spaghetti is one of the world's most popular pasta shapes.",
+    "serving size": 140.0,
+    "micros": {
+      "cholesterol": 0,
+      "sodium": 6,
+      "potassium": 106,
+      "fiber": 1.8,
+      "sugar": 1.5
+    },
+    "macros": {
+      "carbs": 42.8,
+      "protein": 7.5,
+      "fat": 0.9
+    }
   },
   "Strawberry": {
     "group": "fruits",
-    "calories": 32,
-    "nutrients": { "carbs": 7.7, "protein": 0.7, "fat": 0.3 },
-    "funFact": "Strawberries are the only fruit with seeds on the outside."
+    "calories": 28.7,
+    "funFact": "Strawberries are the only fruit with seeds on the outside.",
+    "serving size": 90.0,
+    "micros": {
+      "cholesterol": 0,
+      "sodium": 0,
+      "potassium": 21,
+      "fiber": 1.8,
+      "sugar": 4.4
+    },
+    "macros": {
+      "carbs": 6.9,
+      "protein": 0.6,
+      "fat": 0.3
+    }
   },
   "Blueberry": {
     "group": "fruits",
-    "calories": 57,
-    "nutrients": { "carbs": 14.5, "protein": 0.7, "fat": 0.3 },
-    "funFact": "The first blueberry cultivar was developed in 1916."
+    "calories": 0.8,
+    "funFact": "The first blueberry cultivar was developed in 1916.",
+    "serving size": 1.36,
+    "micros": {
+      "cholesterol": 0,
+      "sodium": 0,
+      "potassium": 0,
+      "fiber": 0.0,
+      "sugar": 0.1
+    },
+    "macros": {
+      "carbs": 0.2,
+      "protein": 0.0,
+      "fat": 0.0
+    }
   },
   "Mango": {
     "group": "fruits",
-    "calories": 60,
-    "nutrients": { "carbs": 15, "protein": 0.8, "fat": 0.4 },
-    "funFact": "Mangoes are the most consumed fruit in the world."
+    "calories": 101.6,
+    "funFact": "Mangoes are the most consumed fruit in the world.",
+    "serving size": 165.0,
+    "micros": {
+      "cholesterol": 0,
+      "sodium": 1,
+      "potassium": 23,
+      "fiber": 2.7,
+      "sugar": 22.4
+    },
+    "macros": {
+      "carbs": 24.4,
+      "protein": 1.3,
+      "fat": 0.6
+    }
   },
   "Pear": {
     "group": "fruits",
-    "calories": 57,
-    "nutrients": { "carbs": 15, "protein": 0.4, "fat": 0.1 },
-    "funFact": "Pear trees can live more than 100 years."
+    "calories": 100.9,
+    "funFact": "Pear trees can live more than 100 years.",
+    "serving size": 178.0,
+    "micros": {
+      "cholesterol": 0,
+      "sodium": 1,
+      "potassium": 21,
+      "fiber": 5.6,
+      "sugar": 17.4
+    },
+    "macros": {
+      "carbs": 26.6,
+      "protein": 0.6,
+      "fat": 0.3
+    }
   },
   "Grapes": {
     "group": "fruits",
-    "calories": 69,
-    "nutrients": { "carbs": 16, "protein": 0.6, "fat": 0.4 },
-    "funFact": "Grapes explode if frozen due to water expansion."
+    "calories": 34.1,
+    "funFact": "Grapes explode if frozen due to water expansion.",
+    "serving size": 49.0,
+    "micros": {
+      "cholesterol": 0,
+      "sodium": 0,
+      "potassium": 9,
+      "fiber": 0.4,
+      "sugar": 7.6
+    },
+    "macros": {
+      "carbs": 8.9,
+      "protein": 0.3,
+      "fat": 0.1
+    }
   },
   "Pineapple": {
     "group": "fruits",
-    "calories": 50,
-    "nutrients": { "carbs": 13.1, "protein": 0.5, "fat": 0.1 },
-    "funFact": "Pineapples take about two years to reach maturity."
+    "calories": 41.9,
+    "funFact": "Pineapples take about two years to reach maturity.",
+    "serving size": 82.5,
+    "micros": {
+      "cholesterol": 0,
+      "sodium": 0,
+      "potassium": 6,
+      "fiber": 1.2,
+      "sugar": 8.1
+    },
+    "macros": {
+      "carbs": 10.8,
+      "protein": 0.4,
+      "fat": 0.1
+    }
   },
   "Tomato": {
     "group": "vegetables",
-    "calories": 18,
-    "nutrients": { "carbs": 3.9, "protein": 0.9, "fat": 0.2 },
-    "funFact": "Tomatoes were once thought poisonous in Europe."
+    "calories": 22.4,
+    "funFact": "Tomatoes were once thought poisonous in Europe.",
+    "serving size": 123.0,
+    "micros": {
+      "cholesterol": 0,
+      "sodium": 6,
+      "potassium": 29,
+      "fiber": 1.5,
+      "sugar": 3.2
+    },
+    "macros": {
+      "carbs": 4.8,
+      "protein": 1.1,
+      "fat": 0.2
+    }
   },
   "Cucumber": {
     "group": "vegetables",
-    "calories": 15,
-    "nutrients": { "carbs": 3.6, "protein": 0.7, "fat": 0.1 },
-    "funFact": "Cucumbers are about 95% water."
+    "calories": 30.7,
+    "funFact": "Cucumbers are about 95% water.",
+    "serving size": 201.0,
+    "micros": {
+      "cholesterol": 0,
+      "sodium": 3,
+      "potassium": 49,
+      "fiber": 1.0,
+      "sugar": 3.4
+    },
+    "macros": {
+      "carbs": 7.4,
+      "protein": 1.3,
+      "fat": 0.2
+    }
   },
   "Kale": {
     "group": "vegetables",
-    "calories": 49,
-    "nutrients": { "carbs": 8.8, "protein": 4.3, "fat": 0.9 },
-    "funFact": "Kale was first grown as a food crop in the 5th century BC."
+    "calories": 35.4,
+    "funFact": "Kale was first grown as a food crop in the 5th century BC.",
+    "serving size": 130.0,
+    "micros": {
+      "cholesterol": 0,
+      "sodium": 30,
+      "potassium": 36,
+      "fiber": 2.6,
+      "sugar": 1.6
+    },
+    "macros": {
+      "carbs": 7.3,
+      "protein": 2.5,
+      "fat": 0.5
+    }
   },
   "Bell Pepper": {
     "group": "vegetables",
-    "calories": 31,
-    "nutrients": { "carbs": 6, "protein": 1, "fat": 0.3 },
-    "funFact": "Bell peppers come in green, red, yellow, and orange varieties."
+    "calories": 31.4,
+    "funFact": "Bell peppers come in green, red, yellow, and orange varieties.",
+    "serving size": 114.0,
+    "micros": {
+      "cholesterol": 0,
+      "sodium": 2,
+      "potassium": 20,
+      "fiber": 1.4,
+      "sugar": 3.6
+    },
+    "macros": {
+      "carbs": 7.8,
+      "protein": 1.1,
+      "fat": 0.2
+    }
   },
   "Eggplant": {
     "group": "vegetables",
-    "calories": 25,
-    "nutrients": { "carbs": 5.9, "protein": 1, "fat": 0.2 },
-    "funFact": "Eggplants are botanically classified as berries."
+    "calories": 196.3,
+    "funFact": "Eggplants are botanically classified as berries.",
+    "serving size": 566.0,
+    "micros": {
+      "cholesterol": 0,
+      "sodium": 5,
+      "potassium": 86,
+      "fiber": 14.3,
+      "sugar": 18.2
+    },
+    "macros": {
+      "carbs": 49.4,
+      "protein": 4.7,
+      "fat": 1.3
+    }
   },
   "Cauliflower": {
     "group": "vegetables",
-    "calories": 25,
-    "nutrients": { "carbs": 5, "protein": 1.9, "fat": 0.3 },
-    "funFact": "Cauliflower was first cultivated in Cyprus in the 6th century AD."
+    "calories": 129.1,
+    "funFact": "Cauliflower was first cultivated in Cyprus in the 6th century AD.",
+    "serving size": 575.0,
+    "micros": {
+      "cholesterol": 0,
+      "sodium": 85,
+      "potassium": 182,
+      "fiber": 13.4,
+      "sugar": 11.8
+    },
+    "macros": {
+      "carbs": 23.4,
+      "protein": 10.5,
+      "fat": 2.6
+    }
   }
 }
