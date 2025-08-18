@@ -5,6 +5,7 @@ import { useNutritionCalc } from "../hooks/useNutritionCalc.js";
 import { compareToMacros, compareToMicros } from "../utils/nutrientHelpers.js";
 import StarRating from "../components/StarRating.jsx";
 import HeaderBar from "../components/HeaderBar.jsx";
+import { formatGrams } from "../utils/nutrientHelpers.js";
 import "../styles/Summary.css";
 
 export default function Summary() {
@@ -117,35 +118,54 @@ export default function Summary() {
               <h3 className="nutrient-category">Macronutrients</h3>
               <p className="nutrient-item">
                 Carbohydrates{" "}
-                <span className="nutrient-value">{macros.carbs} g</span>
+                <span className="nutrient-value">
+                  {formatGrams("", macros.carbs)}
+                </span>
               </p>
               <p className="nutrient-item">
                 Protein{" "}
-                <span className="nutrient-value">{macros.protein} g</span>
+                <span className="nutrient-value">
+                  {formatGrams("", macros.protein)}
+                </span>
               </p>
               <p className="nutrient-item">
-                Fats <span className="nutrient-value">{macros.fats} g</span>
+                Fats{" "}
+                <span className="nutrient-value">
+                  {formatGrams("", macros.fat)}
+                </span>
               </p>
 
               <h3 className="nutrient-category">Micronutrients</h3>
               <p className="nutrient-item">
                 Cholesterol
-                <span className="nutrient-value">{micros.cholesterol} mg</span>
+                <span className="nutrient-value">
+                  {formatGrams("Cholesterol", micros.cholesterol)}
+                </span>
               </p>
               <p className="nutrient-item">
-                Fiber<span className="nutrient-value">{micros.fiber} g</span>
+                Fiber
+                <span className="nutrient-value">
+                  {formatGrams("", micros.fiber)}
+                </span>
               </p>
               <p className="nutrient-item">
-                Sugar<span className="nutrient-value">{micros.sugar} g</span>
+                Sugar
+                <span className="nutrient-value">
+                  {formatGrams("", micros.sugar)}
+                </span>
               </p>
               <p className="nutrient-item">Minerals</p>
               <p className="nutrient-item-sub">
                 Calcium{" "}
-                <span className="nutrient-value">{micros.sodium} mg</span>
+                <span className="nutrient-value">
+                  {formatGrams("Sodium", micros.sodium)}
+                </span>
               </p>
               <p className="nutrient-item-sub">
-                Iron{" "}
-                <span className="nutrient-value">{micros.potassium} mg</span>
+                Potassium{" "}
+                <span className="nutrient-value">
+                  {formatGrams("Potassium", micros.potassium)}
+                </span>
               </p>
             </div>
           </div>

@@ -27,7 +27,6 @@ export default function FoodRack() {
         alt="cabinet"
         className="cabinet-bg"
       />
-
       {/* Each shelf is a row of up to 3 cards */}
       {rows.map((rowItems, rowIndex) => (
         <div key={rowIndex} className={`shelf-row shelf-row--${rowIndex}`}>
@@ -36,8 +35,10 @@ export default function FoodRack() {
           ))}
         </div>
       ))}
-
       {/* Basket button */}
+      <Button to="/menu" className="return-button">
+        Back
+      </Button>
       <Button to="/basket" icon="arrow" className="basket-button">
         Basket ({basket.length})
       </Button>

@@ -8,7 +8,7 @@ export default function Menu() {
   const { basket, selectedGroup, setSelectedGroup } = useMealContext();
 
   const foodGroups = [
-    "fats",       
+    "fats",
     "protein",
     "dairy",
     "grains",
@@ -29,7 +29,9 @@ export default function Menu() {
         onSelectGroup={setSelectedGroup}
         selectedGroup={selectedGroup}
       />
-
+      <Button to="/" className="return-button">
+        Back
+      </Button>
       <Button to="/basket" className="basket-button">
         Basket ({basket.length})
       </Button>

@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { formatGrams } from "../utils/nutrientHelpers.js";
 import "../styles/NutrientList.css";
 
