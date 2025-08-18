@@ -1,17 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
-import "../styles/FoodGroupMenu.css"; 
+import "../styles/FoodGroupMenu.css";
 
-export default function FoodGroupMenu({ groups, onSelectGroup, selectedGroup }) {
-  const navigate = useNavigate(); 
+export default function FoodGroupMenu({
+  groups,
+  onSelectGroup,
+  selectedGroup,
+}) {
+  const navigate = useNavigate();
 
   const topGroups = groups.slice(0, groups.length - 2);
   const bottomGroups = groups.slice(groups.length - 2);
 
   const handleGroupClick = (group) => {
-    onSelectGroup(group); 
-    navigate("/rack", { state: { foodGroup: group } }); 
+    onSelectGroup(group);
+    navigate("/rack", { state: { foodGroup: group } });
   };
 
   return (
@@ -35,18 +39,18 @@ export default function FoodGroupMenu({ groups, onSelectGroup, selectedGroup }) 
         <li className="food-group-item-wrapper">
           <div className="food-group-bottom-row">
             {bottomGroups.map((group) => (
-              <li
+              <div
                 key={group}
                 className={`food-group-item food-group-item--${group} ${
                   selectedGroup === group ? "is-selected" : ""
                 }`}
-                onMouseEnter={() => onSelectGroup(group)} 
+                onMouseEnter={() => onSelectGroup(group)}
                 onClick={() => handleGroupClick(group)}
               >
                 <h2 className="food-group-name">
                   {group.charAt(0).toUpperCase() + group.slice(1)}
                 </h2>
-              </li>
+              </div>
             ))}
           </div>
         </li>

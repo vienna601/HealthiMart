@@ -1,9 +1,8 @@
 import { useMealContext } from "../context/MealContext.jsx";
 import NutrientList from "../components/NutrientList.jsx";
-import { compareToRDI } from "../utils/nutrientHelpers.js";
+import { compareToMacros, compareToMicros } from "../utils/nutrientHelpers.js";
 import Button from "../components/Button.jsx";
 import HeaderBar from "../components/HeaderBar.jsx";
-import { formatNutrients } from "../utils/nutrientHelpers.js";
 import "../styles/Basket.css";
 
 export default function Basket() {
@@ -11,7 +10,7 @@ export default function Basket() {
     basket,
     removeItem,
     clearBasket,
-    nutritionSummary: { totalCalories, macros },
+    nutritionSummary: { totalCalories, macros, micros },
   } = useMealContext();
 
   return (
@@ -54,8 +53,14 @@ export default function Basket() {
 
                   <div className="item-nutrients">
                     <NutrientList
-                      nutrients={item.nutrients}
-                      compareFn={compareToRDI}
+                      nutrients={item.macros}
+                      compareFn={compareToMacros}
+                    />
+                  </div>
+                  <div className="item-nutrients">
+                    <NutrientList
+                      nutrients={item.micros}
+                      compareFn={compareToMicros}
                     />
                   </div>
                 </div>
@@ -72,15 +77,33 @@ export default function Basket() {
             <strong>Total Calories:</strong> {totalCalories.toFixed(2)} kcal
           </p>
 
-          <p className="macro-row">
-            <span className="macro">
+          <p className="nutrient-row">
+            <span className="nutrient">
               <strong>Carbs:</strong> {macros.carbs.toFixed(1)} g
             </span>
-            <span className="macro">
+            <span className="nutrient">
               <strong>Protein:</strong> {macros.protein.toFixed(1)} g
             </span>
-            <span className="macro">
+            <span className="nutrient">
               <strong>Fat:</strong> {macros.fat.toFixed(1)} g
+            </span>
+          </p>
+
+          <p className="nutrient-row">
+            <span className="nutrient">
+              <strong>Cholesterol:</strong> {micros.cholesterol.toFixed(1)} mg
+            </span>
+            <span className="nutrient">
+              <strong>Sodium:</strong> {micros.sodium.toFixed(1)} mg
+            </span>
+            <span className="nutrient">
+              <strong>Potassium:</strong> {micros.potassium.toFixed(1)} mg
+            </span>
+            <span className="nutrient">
+              <strong>Fiber:</strong> {micros.fiber.toFixed(1)} g
+            </span>
+            <span className="nutrient">
+              <strong>Sugar:</strong> {micros.sugar.toFixed(1)} g
             </span>
           </p>
         </div>

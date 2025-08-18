@@ -3,7 +3,6 @@ import { useMealContext } from "../context/MealContext.jsx";
 import NutrientList from "./NutrientList.jsx";
 import "../styles/NutrientList.css";
 import "../styles/FoodItemCard.css";
-import { compareToRDI } from "../utils/nutrientHelpers.js";
 
 export default function FoodItemCard({ item }) {
   const { addItem } = useMealContext();
@@ -36,8 +35,10 @@ export default function FoodItemCard({ item }) {
       <div
         className={`food-item-card__hovercard ${showInfo ? "is-visible" : ""}`}
       >
-        <h5 className="popup__title">Nutrients</h5>
-        <NutrientList nutrients={item.nutrients} compareFn={compareToRDI} />
+        <h5 className="popup__title">Macros</h5>
+        <NutrientList nutrients={item.macros} />
+        <h5 className="popup__title">Micros</h5>
+        <NutrientList nutrients={item.micros} />
         <h5 className="popup__title">Fun Fact</h5>
         <p className="popup__text">{item.funFact}</p>
       </div>

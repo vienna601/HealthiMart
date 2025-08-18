@@ -18,7 +18,7 @@
   margin: 0 auto;
 }
 
-/* Label under the sprite */
+/* display calories */
 .food-item-card__info {
   font-family: "Inter";
   text-align: center;
@@ -28,7 +28,7 @@
 /* === FULL-COVER HOVER CARD === */
 .food-item-card__hovercard {
   position: absolute;
-  inset: -8px; /* extend a bit so shadow isn't clipped */
+  inset: -65px; /* extend to fit all the info */
   background: #fafaf5;
   font-family: "Inter";
   border-radius: 12px;
@@ -36,7 +36,7 @@
   padding: 12px;
   z-index: 100; /* above neighboring tiles */
   opacity: 0; /* hidden by default */
-  transform: translateY(4px) scale(0.98);
+  transform: translateY(4px) scale(1);
   pointer-events: none; /* ignore mouse when hidden */
   transition: opacity 0.15s ease, transform 0.15s ease;
 }

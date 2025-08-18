@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import { useMealContext } from "../context/MealContext.jsx";
-import { useNutritionCalc } from "../hooks/useNutritionCalc.js"; 
-import { compareToRDI, formatNutrients } from "../utils/nutrientHelpers.js";
+import { useNutritionCalc } from "../hooks/useNutritionCalc.js";
+import { compareToMacros, compareToMicros } from "../utils/nutrientHelpers.js";
 import StarRating from "../components/StarRating.jsx";
 import Button from "../components/Button.jsx";
 import HeaderBar from "../components/HeaderBar.jsx";
@@ -34,8 +34,20 @@ export default function Receipt() {
     if (basket.length === 0) return {};
     // score each item by sum of its macro ratios
     const scored = basket.map((item) => {
-      const r = compareToRDI(item.nutrients);
-      return { item, score: r.carbs + r.protein + r.fat };
+      const mac = compareToMacros(item.macros);
+      const mic = compareToMicros(item.micros);
+      return {
+        item,
+        score:
+          mac.carbs +
+          mac.protein +
+          mac.fat +
+          mic.cholesterol +
+          mic.sodium +
+          mic.potassium +
+          mic.fiber +
+          mic.sugar,
+      };
     });
     scored.sort((a, b) => b.score - a.score);
     return {

@@ -2,14 +2,14 @@ import React, { useMemo } from "react";
 import Button from "../components/Button.jsx";
 import { useMealContext } from "../context/MealContext.jsx";
 import { useNutritionCalc } from "../hooks/useNutritionCalc.js";
-import { compareToRDI, formatNutrients } from "../utils/nutrientHelpers.js";
+import { compareToMacros, compareToMicros } from "../utils/nutrientHelpers.js";
 import StarRating from "../components/StarRating.jsx";
 import HeaderBar from "../components/HeaderBar.jsx";
 import "../styles/Summary.css";
 
 export default function Summary() {
   const { basket } = useMealContext();
-  const { totalCalories, macros, macroRatios } = useNutritionCalc(basket);
+  const { macros, micros, macroRatios, microRatios } = useNutritionCalc(basket);
   const itemCount = basket.length;
 
   const combinedName = useMemo(() => {
@@ -23,14 +23,34 @@ export default function Summary() {
   }, [basket]);
 
   const avgRatio =
-    (macroRatios.carbs + macroRatios.protein + macroRatios.fat) / 3;
+    (macroRatios.carbs +
+      macroRatios.protein +
+      macroRatios.fat +
+      microRatios.cholesterol +
+      microRatios.sodium +
+      microRatios.potassium +
+      microRatios.fiber +
+      microRatios.sugar) /
+    8;
   const starCount = Math.round(Math.min(avgRatio, 1) * 5);
 
   const { bestItem, worstItem } = useMemo(() => {
     if (basket.length === 0) return {};
     const scored = basket.map((item) => {
-      const r = compareToRDI(item.nutrients);
-      return { item, score: r.carbs + r.protein + r.fat };
+      const mac = compareToMacros(item.macros);
+      const mic = compareToMicros(item.micros);
+      return {
+        item,
+        score:
+          mac.carbs +
+          mac.protein +
+          mac.fat +
+          mic.cholesterol +
+          mic.sodium +
+          mic.potassium +
+          mic.fiber +
+          mic.sugar,
+      };
     });
     scored.sort((a, b) => b.score - a.score);
     return {
@@ -45,26 +65,6 @@ export default function Summary() {
   //   macros.protein += item.nutrients.protein;
   //   macros.fat += item.nutrients.fat;
   // }
-
-  const nutrients = {
-    macronutrients: {
-      carbohydrates: "150",
-      protein: "50",
-      fats: "30",
-    },
-    micronutrients: {
-      vitamins: {
-        a: "500",
-        c: "90",
-        d: "15",
-      },
-      minerals: {
-        calcium: "1000",
-        iron: "18",
-        sodium: "2300",
-      },
-    },
-  };
 
   const funFacts = [
     "Did you know that Vitamin C helps your body absorb iron more effectively? Pair your iron-rich foods with some citrus!",
@@ -117,55 +117,35 @@ export default function Summary() {
               <h3 className="nutrient-category">Macronutrients</h3>
               <p className="nutrient-item">
                 Carbohydrates{" "}
-                <span className="nutrient-value">
-                  {nutrients.macronutrients.carbohydrates} g
-                </span>
+                <span className="nutrient-value">{macros.carbs} g</span>
               </p>
               <p className="nutrient-item">
                 Protein{" "}
-                <span className="nutrient-value">
-                  {nutrients.macronutrients.protein} g
-                </span>
+                <span className="nutrient-value">{macros.protein} g</span>
               </p>
               <p className="nutrient-item">
-                Fats{" "}
-                <span className="nutrient-value">
-                  {nutrients.macronutrients.fats} g
-                </span>
+                Fats <span className="nutrient-value">{macros.fats} g</span>
               </p>
 
               <h3 className="nutrient-category">Micronutrients</h3>
-              <p className="nutrient-item">Vitamins</p>
-              <p className="nutrient-item-sub">
-                A{" "}
-                <span className="nutrient-value">
-                  {nutrients.micronutrients.vitamins.a} g
-                </span>
+              <p className="nutrient-item">
+                Cholesterol
+                <span className="nutrient-value">{micros.cholesterol} mg</span>
               </p>
-              <p className="nutrient-item-sub">
-                C{" "}
-                <span className="nutrient-value">
-                  {nutrients.micronutrients.vitamins.c} g
-                </span>
+              <p className="nutrient-item">
+                Fiber<span className="nutrient-value">{micros.fiber} g</span>
               </p>
-              <p className="nutrient-item-sub">
-                D{" "}
-                <span className="nutrient-value">
-                  {nutrients.micronutrients.vitamins.d} g
-                </span>
+              <p className="nutrient-item">
+                Sugar<span className="nutrient-value">{micros.sugar} g</span>
               </p>
               <p className="nutrient-item">Minerals</p>
               <p className="nutrient-item-sub">
                 Calcium{" "}
-                <span className="nutrient-value">
-                  {nutrients.micronutrients.minerals.calcium} g
-                </span>
+                <span className="nutrient-value">{micros.sodium} mg</span>
               </p>
               <p className="nutrient-item-sub">
                 Iron{" "}
-                <span className="nutrient-value">
-                  {nutrients.micronutrients.minerals.iron} g
-                </span>
+                <span className="nutrient-value">{micros.potassium} mg</span>
               </p>
             </div>
           </div>
@@ -191,7 +171,7 @@ export default function Summary() {
                 <p className="choice-text">
                   <b>{bestItem.name}</b>
                   <br />
-                  {bestItem.calories}kcal
+                  {bestItem.calories} kcal
                 </p>
               </div>
             </div>
@@ -208,7 +188,7 @@ export default function Summary() {
                 <p className="choice-text">
                   <b>{worstItem.name}</b>
                   <br />
-                  {worstItem.calories}kcal
+                  {worstItem.calories} kcal
                 </p>
               </div>
             </div>
