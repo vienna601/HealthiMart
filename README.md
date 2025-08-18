@@ -2,7 +2,6 @@
 
 HealthiMart is an interactive educational project designed to make nutrition engaging and fun. Through a game-like shopping experience, users explore different food groups, select items, and receive feedback on the nutritional balance of their choices.
 
-<!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
   <ol>
@@ -24,8 +23,6 @@ HealthiMart is an interactive educational project designed to make nutrition eng
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
-
-<!-- About the project -->
 
 ## About The Project
 
@@ -104,7 +101,7 @@ HealthiMart/
         └── storage.js        # Basket persistence in localStorage
 ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#HealthiMart">back to top</a>)</p>
 
 ## Getting Started
 
@@ -156,7 +153,26 @@ npm run dev
 
 Then open `http://localhost:5173/` to see HealthiMart in action!
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#HealthiMart">back to top</a>)</p>
+
+## Contributors
+
+| Team member | Roles |
+|------------|----------|
+| Vienna | Food Rack, Basket, Summary, Backend/food data, hooks/utils/context|
+| Angela  | Home, Menu, Summary, UI/UX Design, styling and aesthetics |
+
+<p align="right">(<a href="#HealthiMart">back to top</a>)</p>
+
+## Contact
+
+Vienna Zhao - [GitHub](https://github.com/vienna601) - [LinkedIn](https://www.linkedin.com/in/vienna-zhao-207b402b5/) - [vienna.sw.chiu@gmail.com](vienna.sw.chiu@gmail.com)
+
+Angela Ho - [GitHub](https://github.com/Angelaho1128) - [LinkedIn](https://www.linkedin.com/in/angela-ho-a08a10304/) - [hocheukwing1128@gmail.com](hocheukwing1128@gmail.com)
+
+Project Link: https://github.com/vienna601/HealthiMart
+
+<p align="right">(<a href="#HealthiMart">back to top</a>)</p>
 
 ## Acknowledgements
 
@@ -181,6 +197,8 @@ Then open `http://localhost:5173/` to see HealthiMart in action!
 > VeryWellFit
 
 [CalorieNinjas Docs](https://calorieninjas.com/api)
+
+[Flaticon](https://www.flaticon.com/)
 
 [Readme Template 1 - othneildrew](https://github.com/othneildrew/Best-README-Template)
 
