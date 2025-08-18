@@ -1,39 +1,120 @@
+/* src/styles/Basket.css */
 .basket-page {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  background: #f9f9f9;
+  align-items: center; /* Centers children horizontally */
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 20px; /* Overall page padding */
+  background-color: #f0f4f8;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%; /* Ensure it takes full width to allow centering */
 }
 
-/* --- Header --- */
+/* HeaderBar is assumed to be an external component and manages its own top-level styling */
+/* The HeaderBar itself should not have specific CSS here, it should handle its own top positioning */
+
+
 .basket-header {
-  position: static;
-  margin-top: 80px;
-  left: 0;
-  right: 0;
-  padding: 2rem 2.5rem;
-  border-bottom: 1px solid #e2e8f0;
-  background: #fff;
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1600px; /* Limits header width to align with main content */
+  margin: 80px auto 40px auto; /* Top margin from HeaderBar, horizontal centering, bottom margin */
+  padding: 1rem;
+  border-bottom: 5px solid #898e95;
   gap: 1rem;
   z-index: 1;
-}
-.basket-header h1 {
-  margin: 0;
-  font-size: 2rem;
-}
-.basket-count {
-  color: #718096;
-  font-size: 0.9rem;
+  box-sizing: border-box; /* Include padding in width */
 }
 
-/* --- Scrollable content --- */
-.basket-content {
-  flex: 1;
-  overflow-y: auto;
-  padding: 1rem 1.5rem;
+.basket-title {
+  color: #48502f;
+  font-feature-settings: "liga" off, "clig" off;
+  font-family: "Newsreader", serif;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: -1.28px;
+  margin: 0px;
 }
+
+.basket-title .item-count {
+  font-size: 0.5em;
+  color: #666;
+  margin-left: 10px;
+}
+
+.basket-header-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.basket-page .start-over-button {
+  display: inline-flex;
+  padding: 9.5px 26px 9.5px 27px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background: #7a824f;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  text-align: center;
+  text-decoration: none;
+}
+
+.basket-page .back-button {
+  display: inline-flex;
+  padding: 9.5px 31px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  border: 1px solid #c2c2c2;
+  background: #fff;
+  color: #000;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* --- Main content area with two columns --- */
+.basket-main-content {
+  display: flex;
+  justify-content: space-between; /* Change to space-between to spread items horizontally */
+  align-items: flex-start; /* Align columns to the top */
+  width: 100%;
+  max-width: 1600px; /* Match header's max-width for alignment */
+  gap: 20px; /* Space between the two columns */
+  flex-grow: 1; /* Allows this section to grow and fill available vertical space */
+  padding: 0 20px; /* Add horizontal padding to align with page edges */
+  box-sizing: border-box;
+}
+
+/* --- Left Column: Scrollable content container for cards --- */
+.basket-content { /* Matches JSX */
+  flex: 1; /* Allow it to take up remaining space dynamically */
+  max-width: 1100px; /* Limit the max width to ensure it doesn't push the sidebar out too much */
+  overflow-y: auto; /* Enables scrolling for the grid of cards */
+  padding: 1rem 1.5rem; /* Internal padding for the scrollable area */
+  background: #fff; /* White background for the scrollable area */
+  border-radius: 8px; /* Matching card border-radius */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  min-height: 200px; /* Ensured min-height to show at least 2 rows of cards + gap */
+  max-height: 700px; /* Adjust max-height to fit within viewport, consider header/footer */
+  min-width: 0; /* Important: Allows the flex item to shrink below its content size, preventing overflow */
+}
+
 .empty-msg {
   color: #718096;
   text-align: center;
@@ -43,18 +124,24 @@
 /* --- Grid of cards --- */
 .basket-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  /* Now explicitly set columns to 240px, auto-fit will arrange them */
+  grid-template-columns: repeat(auto-fit, 240px);
   gap: 1rem;
+  /* Use justify-content to center grid items within the grid-container if total width is less than container */
+  justify-content: flex-start; /* Left-align items within the grid */
 }
 
 /* --- Individual card --- */
 .basket-item-card {
+  width: 240px; /* Set a fixed width for the card */
+  /* Removed fixed height: 420px; to allow content to dictate height */
+  /* If content still overflows, consider min-height instead of height */
   position: relative;
   background: #fff;
   font-family: "Inter";
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  overflow: hidden;
+  /* Removed overflow: hidden; to ensure all content is visible */
   display: flex;
   flex-direction: column;
 }
@@ -80,7 +167,7 @@
 }
 .basket-item-info {
   padding: 0.75rem;
-  flex: 1;
+  /* Removed flex: 1; to allow content to flow naturally */
   display: flex;
   flex-direction: column;
 }
@@ -96,49 +183,106 @@
   color: #4a5568;
 }
 .item-nutrients {
-  margin-top: auto;
+  /* Removed margin-top: auto; to allow content to flow naturally */
+}
+
+/* --- Right Column: Nutrients List Sidebar --- */
+.nutrients-list-sidebar {
+  width: 400px; /* Fixed width for the sidebar */
+  flex-shrink: 0; /* Prevent it from shrinking */
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes content and buttons to opposite ends */
+  min-height: 428px; /* Adjust to match the content it's alongside, or set based on design */
+  max-height: calc(100vh - 200px); /* A placeholder, adjust as needed */
+}
+
+.nutrients-list-title {
+  font-family: "Inter", sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.nutrient-rows-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem; /* Space between nutrient rows */
+    margin-bottom: auto; /* Pushes buttons to the bottom */
+}
+
+.nutrient-row {
+  display: flex;
+  justify-content: space-between; /* Aligns label left, value right */
+  align-items: baseline;
+  margin: 0.25rem 0;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  color: #000;
+}
+
+.nutrient-label {
+  font-weight: 400; /* Regular weight for labels */
+}
+
+.nutrient-value {
+  font-weight: 400; /* Regular weight for values */
+  text-align: right;
+  white-space: nowrap; /* Prevent value from wrapping */
+}
+
+.nutrients-list-buttons {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  gap: 10px; /* Space between Clear and Checkout buttons */
+  align-self: flex-end; /* Aligns this button group to the right */
+  margin-top: 1.5rem; /* Space above buttons */
+  width: 100%; /* Ensure buttons span full width of their container */
+}
+
+.nutrients-list-buttons .clear-button {
+  background: #fff;
+  border: 1px solid #c2c2c2;
+  color: #000;
+  padding: 9.5px 31px; /* Match "Back" button padding */
+  border-radius: 20px; /* Match "Back" button radius */
+  align-self: flex-end; /* Align individual button to the right */
 }
 
 /* --- Footer --- */
 .basket-footer {
-  padding: 1rem 1.5rem;
-  border-top: 1px solid #e2e8f0;
-  background: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1;
-}
-.totals {
-  font-family: "Inter";
-  margin: 0.25rem;
-  font-size: 1.3rem;
-  display: flex;
-  flex-direction: column;
-}
-/* space between the nutrition groups */
-.nutrient-row {
-  display: flex;
-  flex-wrap: wrap; /* wraps neatly on small screens */
-  gap: 24px; /* ← adjust spacing here */
-  margin: 0.25rem 0;
-  align-items: baseline;
+  /* This footer is now mainly for global page bottom spacing if needed */
+  /* If it had content, ensure it's also max-width and centered */
+  width: 100%;
+  max-width: 1600px;
+  margin-top: 20px; /* Space from main content */
+  padding: 1rem 20px; /* Align with page horizontal padding */
+  text-align: center;
+  box-sizing: border-box;
 }
 
-.nutrient {
-  display: inline-flex;
-  gap: 6px; /* space between label and value */
+.btn.checkout-button {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
 }
 
 /* --- Scrollbar styling (WebKit) --- */
-.basket-content::-webkit-scrollbar {
+.basket-grid-container::-webkit-scrollbar {
   width: 8px;
 }
-.basket-content::-webkit-scrollbar-track {
+.basket-grid-container::-webkit-scrollbar-track {
   background: #f1f1f1;
   border-radius: 4px;
 }
-.basket-content::-webkit-scrollbar-thumb {
+.basket-grid-container::-webkit-scrollbar-thumb {
   background: #cbd5e0;
   border-radius: 4px;
 }

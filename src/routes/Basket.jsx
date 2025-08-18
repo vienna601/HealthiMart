@@ -1,29 +1,56 @@
-import { useMealContext } from "../context/MealContext.jsx";
-import NutrientList from "../components/NutrientList.jsx";
-import { compareToMacros, compareToMicros } from "../utils/nutrientHelpers.js";
+// src/routes/Basket.jsx
+import React from "react";
+import { Link } from "react-router-dom";
 import Button from "../components/Button.jsx";
 import HeaderBar from "../components/HeaderBar.jsx";
+import { useMealContext } from "../context/MealContext.jsx";
+import { useNutritionCalc } from "../hooks/useNutritionCalc.js"; // Import your useNutritionCalc hook
+import { formatGrams } from "../utils/nutrientHelpers.js"; // Import formatGrams
 import "../styles/Basket.css";
+import NutrientList from "../components/NutrientList.jsx";
+import { compareToMacros, compareToMicros } from "../utils/nutrientHelpers.js";
 
 export default function Basket() {
-  const {
-    basket,
-    removeItem,
-    clearBasket,
-    nutritionSummary: { totalCalories, macros, micros },
-  } = useMealContext();
+  const { basket, removeItem, clearBasket } = useMealContext();
+  const { totalCalories, macros, micros } = useNutritionCalc(basket); // Get calculated data
 
+  // Prepare nutrients for display in the right sidebar
+  const nutrientsList = {
+    totalCalories: totalCalories.toFixed(0), // No 'g' or 'kcal' here, added in JSX
+    carbohydrates: macros.carbs,
+    protein: macros.protein,
+    fats: macros.fat,
+    cholesterol: micros.cholesterol,
+    fibre: micros.fiber, // 'fiber' in useNutritionCalc, 'fibre' in display
+    sodium: micros.sodium,
+    sugars: micros.sugar,
+  };
+
+  const handleClearBasket = () => {
+    clearBasket(); // Calls the clearBasket function from MealContext
+  };
+  
   return (
     <div className="basket-page">
-      <HeaderBar></HeaderBar>
-      {/* Header */}
+      <HeaderBar /> {/* Your HealthiMart header */}
+
       <header className="basket-header">
-        <h1>Basket</h1>
-        <span className="basket-count">{basket.length} items</span>
+        <h1 className="basket-title">
+          Basket <span className="item-count">{basket.length} items</span>
+        </h1>
+        <div className="basket-header-buttons">
+          <Button to="/" className="start-over-button">
+            Start over
+          </Button>
+          <Button to="/menu" className="back-button">
+            Back
+          </Button>
+        </div>
       </header>
 
-      {/* Scrollable content */}
-      <div className="basket-content">
+      {/* Main content area for two columns: Food Grid + Nutrient List */}
+      <div className="basket-main-content">
+        <div className="basket-content">
         {basket.length === 0 ? (
           <p className="empty-msg">Your basket is empty.</p>
         ) : (
@@ -66,59 +93,61 @@ export default function Basket() {
                 </div>
               </div>
             ))}
+        </div>
+        )}    
+        </div>
+        {/* Right column: Nutrients List and action buttons */}
+        <div className="nutrients-list-sidebar">
+          <h2 className="nutrients-list-title">Nutrients List</h2>
+          <div className="nutrient-rows-container">
+            <div className="nutrient-row">
+              <span className="nutrient-label">Total Calories</span>
+              <span className="nutrient-value">{nutrientsList.totalCalories} kcal</span>
+            </div>
+            <div className="nutrient-row">
+              <span className="nutrient-label">Carbohydrates</span>
+              <span className="nutrient-value">{formatGrams("Carbohydrates", nutrientsList.carbohydrates)}</span>
+            </div>
+            <div className="nutrient-row">
+              <span className="nutrient-label">Protein</span>
+              <span className="nutrient-value">{formatGrams("Protein", nutrientsList.protein)}</span>
+            </div>
+            <div className="nutrient-row">
+              <span className="nutrient-label">Fats</span>
+              <span className="nutrient-value">{formatGrams("Fats", nutrientsList.fats)}</span>
+            </div>
+            <div className="nutrient-row">
+              <span className="nutrient-label">Cholesterol</span>
+              <span className="nutrient-value">{formatGrams("Cholesterol", nutrientsList.cholesterol)}</span>
+            </div>
+            <div className="nutrient-row">
+              <span className="nutrient-label">Fibre</span>
+              <span className="nutrient-value">{formatGrams("Fiber", nutrientsList.fibre)}</span> {/* Ensure 'Fiber' is handled by formatGrams */}
+            </div>
+            <div className="nutrient-row">
+              <span className="nutrient-label">Sodium</span>
+              <span className="nutrient-value">{formatGrams("Sodium", nutrientsList.sodium)}</span>
+            </div>
+            <div className="nutrient-row">
+              <span className="nutrient-label">Sugars</span>
+              <span className="nutrient-value">{formatGrams("Sugar", nutrientsList.sugars)}</span>
+            </div>
           </div>
-        )}
+          <div className="nutrients-list-buttons">
+            <Button onClick={handleClearBasket} className="clear-basket-button">
+              Clear Basket
+            </Button>
+          </div>
+        </div>
       </div>
 
-      {/* Sticky footer with totals & confirm */}
       <footer className="basket-footer">
-        <div className="totals">
-          <p>
-            <strong>Total Calories:</strong> {totalCalories.toFixed(2)} kcal
-          </p>
-
-          <p className="nutrient-row">
-            <span className="nutrient">
-              <strong>Carbs:</strong> {macros.carbs.toFixed(1)} g
-            </span>
-            <span className="nutrient">
-              <strong>Protein:</strong> {macros.protein.toFixed(1)} g
-            </span>
-            <span className="nutrient">
-              <strong>Fat:</strong> {macros.fat.toFixed(1)} g
-            </span>
-          </p>
-
-          <p className="nutrient-row">
-            <span className="nutrient">
-              <strong>Cholesterol:</strong> {micros.cholesterol.toFixed(1)} mg
-            </span>
-            <span className="nutrient">
-              <strong>Sodium:</strong> {micros.sodium.toFixed(1)} mg
-            </span>
-            <span className="nutrient">
-              <strong>Potassium:</strong> {micros.potassium.toFixed(1)} mg
-            </span>
-            <span className="nutrient">
-              <strong>Fiber:</strong> {micros.fiber.toFixed(1)} g
-            </span>
-            <span className="nutrient">
-              <strong>Sugar:</strong> {micros.sugar.toFixed(1)} g
-            </span>
-          </p>
-        </div>
-
-        <Button onClick={clearBasket}>Clear</Button>
-        <Button to="/rack" className="back-button">
-          Back
-        </Button>
-        {basket.length === 0 ? (
-          <p></p>
-        ) : (
-          <Button to="/summary" icon="arrow">
-            Checkout
-          </Button>
-        )}
+        {/* This footer can be used for global basket page elements or left empty */}
+        <div className="nutrients-list-buttons">
+            <Button to="/summary" icon="arrow" className="checkout-button">
+              Checkout
+            </Button>
+          </div>
       </footer>
     </div>
   );
