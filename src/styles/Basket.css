@@ -15,7 +15,6 @@
 /* HeaderBar is assumed to be an external component and manages its own top-level styling */
 /* The HeaderBar itself should not have specific CSS here, it should handle its own top positioning */
 
-
 .basket-header {
   display: flex;
   align-items: center;
@@ -102,7 +101,8 @@
 }
 
 /* --- Left Column: Scrollable content container for cards --- */
-.basket-content { /* Matches JSX */
+.basket-content {
+  /* Matches JSX */
   flex: 1; /* Allow it to take up remaining space dynamically */
   max-width: 1100px; /* Limit the max width to ensure it doesn't push the sidebar out too much */
   overflow-y: auto; /* Enables scrolling for the grid of cards */
@@ -182,9 +182,6 @@
   text-align: right;
   color: #4a5568;
 }
-.item-nutrients {
-  /* Removed margin-top: auto; to allow content to flow naturally */
-}
 
 /* --- Right Column: Nutrients List Sidebar --- */
 .nutrients-list-sidebar {
@@ -207,15 +204,16 @@
   font-size: 25px;
   font-weight: 600;
   color: #000;
-  margin-bottom: 1.5rem;
+  margin-top: -0.3rem;
+  margin-bottom: 1rem;
   text-align: left;
 }
 
 .nutrient-rows-container {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem; /* Space between nutrient rows */
-    margin-bottom: auto; /* Pushes buttons to the bottom */
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; /* Space between nutrient rows */
+  margin-bottom: auto; /* Pushes buttons to the bottom */
 }
 
 .nutrient-row {

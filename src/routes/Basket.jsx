@@ -24,16 +24,16 @@ export default function Basket() {
     fibre: micros.fiber, // 'fiber' in useNutritionCalc, 'fibre' in display
     sodium: micros.sodium,
     sugars: micros.sugar,
+    potassium: micros.potassium,
   };
 
   const handleClearBasket = () => {
     clearBasket(); // Calls the clearBasket function from MealContext
   };
-  
+
   return (
     <div className="basket-page">
       <HeaderBar /> {/* Your HealthiMart header */}
-
       <header className="basket-header">
         <h1 className="basket-title">
           Basket <span className="item-count">{basket.length} items</span>
@@ -47,54 +47,53 @@ export default function Basket() {
           </Button>
         </div>
       </header>
-
       {/* Main content area for two columns: Food Grid + Nutrient List */}
       <div className="basket-main-content">
         <div className="basket-content">
-        {basket.length === 0 ? (
-          <p className="empty-msg">Your basket is empty.</p>
-        ) : (
-          <div className="basket-grid">
-            {basket.map((item, idx) => (
-              <div key={`${item.id}-${idx}`} className="basket-item-card">
-                {/* remove button */}
-                <button
-                  className="remove-button"
-                  onClick={() => removeItem(item.id)}
-                  aria-label={`Remove ${item.name}`}
-                >
-                  ×
-                </button>
+          {basket.length === 0 ? (
+            <p className="empty-msg">Your basket is empty.</p>
+          ) : (
+            <div className="basket-grid">
+              {basket.map((item, idx) => (
+                <div key={`${item.id}-${idx}`} className="basket-item-card">
+                  {/* remove button */}
+                  <button
+                    className="remove-button"
+                    onClick={() => removeItem(item.id)}
+                    aria-label={`Remove ${item.name}`}
+                  >
+                    ×
+                  </button>
 
-                {/* image */}
-                <img
-                  src={item.imageUrl}
-                  alt={item.name}
-                  className="basket-item-img"
-                />
+                  {/* image */}
+                  <img
+                    src={item.imageUrl}
+                    alt={item.name}
+                    className="basket-item-img"
+                  />
 
-                {/* info */}
-                <div className="basket-item-info">
-                  <h4 className="item-name">{item.name}</h4>
-                  <p className="item-calories">{item.calories} kcal</p>
+                  {/* info */}
+                  <div className="basket-item-info">
+                    <h4 className="item-name">{item.name}</h4>
+                    <p className="item-calories">{item.calories} kcal</p>
 
-                  <div className="item-nutrients">
-                    <NutrientList
-                      nutrients={item.macros}
-                      compareFn={compareToMacros}
-                    />
-                  </div>
-                  <div className="item-nutrients">
-                    <NutrientList
-                      nutrients={item.micros}
-                      compareFn={compareToMicros}
-                    />
+                    <div className="item-nutrients">
+                      <NutrientList
+                        nutrients={item.macros}
+                        compareFn={compareToMacros}
+                      />
+                    </div>
+                    <div className="item-nutrients">
+                      <NutrientList
+                        nutrients={item.micros}
+                        compareFn={compareToMicros}
+                      />
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-        </div>
-        )}    
+              ))}
+            </div>
+          )}
         </div>
         {/* Right column: Nutrients List and action buttons */}
         <div className="nutrients-list-sidebar">
@@ -102,35 +101,58 @@ export default function Basket() {
           <div className="nutrient-rows-container">
             <div className="nutrient-row">
               <span className="nutrient-label">Total Calories</span>
-              <span className="nutrient-value">{nutrientsList.totalCalories} kcal</span>
+              <span className="nutrient-value">
+                {nutrientsList.totalCalories} kcal
+              </span>
             </div>
             <div className="nutrient-row">
               <span className="nutrient-label">Carbohydrates</span>
-              <span className="nutrient-value">{formatGrams("Carbohydrates", nutrientsList.carbohydrates)}</span>
+              <span className="nutrient-value">
+                {formatGrams("Carbohydrates", nutrientsList.carbohydrates)}
+              </span>
             </div>
             <div className="nutrient-row">
               <span className="nutrient-label">Protein</span>
-              <span className="nutrient-value">{formatGrams("Protein", nutrientsList.protein)}</span>
+              <span className="nutrient-value">
+                {formatGrams("Protein", nutrientsList.protein)}
+              </span>
             </div>
             <div className="nutrient-row">
               <span className="nutrient-label">Fats</span>
-              <span className="nutrient-value">{formatGrams("Fats", nutrientsList.fats)}</span>
+              <span className="nutrient-value">
+                {formatGrams("Fats", nutrientsList.fats)}
+              </span>
             </div>
             <div className="nutrient-row">
               <span className="nutrient-label">Cholesterol</span>
-              <span className="nutrient-value">{formatGrams("Cholesterol", nutrientsList.cholesterol)}</span>
+              <span className="nutrient-value">
+                {formatGrams("Cholesterol", nutrientsList.cholesterol)}
+              </span>
             </div>
             <div className="nutrient-row">
               <span className="nutrient-label">Fibre</span>
-              <span className="nutrient-value">{formatGrams("Fiber", nutrientsList.fibre)}</span> {/* Ensure 'Fiber' is handled by formatGrams */}
-            </div>
-            <div className="nutrient-row">
-              <span className="nutrient-label">Sodium</span>
-              <span className="nutrient-value">{formatGrams("Sodium", nutrientsList.sodium)}</span>
+              <span className="nutrient-value">
+                {formatGrams("Fiber", nutrientsList.fibre)}
+              </span>{" "}
+              {/* Ensure 'Fiber' is handled by formatGrams */}
             </div>
             <div className="nutrient-row">
               <span className="nutrient-label">Sugars</span>
-              <span className="nutrient-value">{formatGrams("Sugar", nutrientsList.sugars)}</span>
+              <span className="nutrient-value">
+                {formatGrams("Sugar", nutrientsList.sugars)}
+              </span>
+            </div>
+            <div className="nutrient-row">
+              <span className="nutrient-label">Sodium</span>
+              <span className="nutrient-value">
+                {formatGrams("Sodium", nutrientsList.sodium)}
+              </span>
+            </div>
+            <div className="nutrient-row">
+              <span className="nutrient-label">Potassium</span>
+              <span className="nutrient-value">
+                {formatGrams("Potassium", nutrientsList.potassium)}
+              </span>
             </div>
           </div>
           <div className="nutrients-list-buttons">
@@ -140,14 +162,13 @@ export default function Basket() {
           </div>
         </div>
       </div>
-
       <footer className="basket-footer">
         {/* This footer can be used for global basket page elements or left empty */}
         <div className="nutrients-list-buttons">
-            <Button to="/summary" icon="arrow" className="checkout-button">
-              Checkout
-            </Button>
-          </div>
+          <Button to="/summary" icon="arrow" className="checkout-button">
+            Checkout
+          </Button>
+        </div>
       </footer>
     </div>
   );
