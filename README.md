@@ -1,18 +1,166 @@
 # HealthiMart
 
-A website that aims to educate the user on nutrition and promote a balanced diet.
+HealthiMart is an interactive educational project designed to make nutrition engaging and fun. Through a game-like shopping experience, users explore different food groups, select items, and receive feedback on the nutritional balance of their choices.
 
-## Contributing
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
+
+<!-- About the project -->
+
+## About The Project
+
+Built with: [![React][https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB]][https://reactjs.org/]
+
+### Demo
+
+<div align="center"> 
+  <img src="./healthimart-demo.gif" alt="screenshot" />
+</div>
+
+### Features
+
+- food pyramid-like menu
+- food item pop up nutrition information on hover
+- ratings based on nutrition value of meal and reference daily intake for the average adult (see [below](#acknowledgements))
+- best and worst choice from your selected items
+- one-time backend API call that loads the nutrition data for food items
+
+### Color Codes
+
+| Color     | Hex Code  | Preview                                                                                 |
+| --------- | --------- | --------------------------------------------------------------------------------------- |
+| Primary   | `#7A824F` | <div style="width:20px;height:20px;background:#7A824F;border:1px solid #7A824F;"></div> |
+| Secondary | `#48502F` | <div style="width:20px;height:20px;background:#48502F;border:1px solid #48502F;"></div> |
+| Accent    | `#F7EFDA` | <div style="width:20px;height:20px;background:#F7EFDA;border:1px solid #F7EFDA;"></div> |
+
+### Project Structure
+
+```yaml
+HealthiMart/
+├── package.json
+├── vite.config.js
+├── index.html
+├── README.md
+├── backend/
+│   └── load-data.py          # One-time CalorieNinjas API call
+├── public/
+│   └── assets/
+│       └── images/           # All the food item images here
+└── src/
+    ├── main.jsx              # React entrypoint
+    ├── App.jsx               # Routes & layout
+    ├── Boundary.jsx          # Debugging
+    ├── routes/
+    │   ├── Home.jsx          # Starting screen
+    │   ├── Menu.jsx          # Group hover menu (6 food groups)
+    │   ├── FoodRack.jsx      # 3 rows of items for selected group
+    │   ├── Basket.jsx        # “Shopping cart” screen
+    │   └── Summary.jsx       # Nutrition facts receipt + star rating
+    ├── components/
+    │   ├── FoodGroupMenu.jsx # Hoverable transparent menu
+    │   ├── FoodItemCard.jsx  # Displays item in rack & pop-up info
+    │   ├── HeaderBar.jsx     # Header bar displaying app name
+    │   ├── NutrientList.jsx  # Macros & micros display
+    │   ├── StarRating.jsx    # 0–5 stars component
+    │   └── Button.jsx        # Reusable button
+    ├── context/
+    │   └── MealContext.jsx   # Tracks selected items & nutrient totals
+    ├── data/
+    │   ├── food-items.js     # Loading raw JSON data
+    │   └── meta-data.json    # Food item data (from CalorieNinjas API)
+    ├── hooks/
+    │   └── useNutritionCalc.js # Calculates totals, deficits, excesses, ratios
+    ├── styles/
+    │   ├── Basket.css
+    │   ├── Button.css
+    │   ├── FoodGroupMenu.css
+    │   ├── FoodItemCard.css
+    │   ├── FoodRack.css
+    │   ├── Home.css
+    │   ├── Menu.css
+    │   ├── NutrientList.css
+    │   ├── StarRating.css
+    │   └── Summary.css
+    └── utils/
+        ├── nutrientHelpers.js # Formatting and comparison logic
+        └── storage.js        # Basket persistence in localStorage
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Getting Started
+
+### Prerequisites
+
+Make sure you have `node.js` and `npm` installed:
+
+```bash
+node -v
+npm -v
+```
+
+To install npm and node.js, visit [https://nodejs.org/en/download](https://nodejs.org/en/download)
+
+### Installation
+
+1. Clone the repository
 
 ```bash
 git clone https://github.com/vienna601/HealthiMart.git
-git pull origin main --rebase
-git add .
-git commit -m "message-here"
-git push origin main
+cd HealthiMart
 ```
 
-## References for RDI
+2. Install dependencies
+
+```bash
+npm install
+```
+
+3. Change git remote URL to avoid accidental pushes to base project
+
+```bash
+git remote set-url origin <your_repo_url>
+```
+
+4. Confirm the change
+
+```bash
+git remote -v
+```
+
+### Usage
+
+Start the app in development mode:
+
+```bash
+npm run dev
+```
+
+Then open `http://localhost:5173/` to see HealthiMart in action!
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Acknowledgements
 
 [Daily Value on the Nutrition and Supplement Facts labels](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels)
 
@@ -33,3 +181,11 @@ git push origin main
 [Daily Diet Composition Charts for Carbs, Protein, and Fat](https://www.verywellfit.com/daily-diet-composition-calculator-charts-carbs-protein-fat-3861072)
 
 > VeryWellFit
+
+[CalorieNinjas Docs](https://calorieninjas.com/api)
+
+[Readme Template 1 - othneildrew](https://github.com/othneildrew/Best-README-Template)
+
+[Readme Template 2 - Louis3797](https://github.com/Louis3797/awesome-readme-template?tab=readme-ov-file)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
