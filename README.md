@@ -29,7 +29,8 @@ HealthiMart is an interactive educational project designed to make nutrition eng
 
 ## About The Project
 
-Built with: [![React][https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB]][https://reactjs.org/]
+### Built with:
+[![Next][Next.js]][Next-url] [![React][React.js]][React-url]
 
 ### Demo
 
@@ -40,18 +41,15 @@ Built with: [![React][https://img.shields.io/badge/React-20232A?style=for-the-ba
 ### Features
 
 - food pyramid-like menu
-- food item pop up nutrition information on hover
+- food item pop-up nutrition information on hover
 - ratings based on nutrition value of meal and reference daily intake for the average adult (see [below](#acknowledgements))
 - best and worst choice from your selected items
 - one-time backend API call that loads the nutrition data for food items
 
 ### Color Codes
-
-| Color     | Hex Code  | Preview                                                                                 |
-| --------- | --------- | --------------------------------------------------------------------------------------- |
-| Primary   | `#7A824F` | <div style="width:20px;height:20px;background:#7A824F;border:1px solid #7A824F;"></div> |
-| Secondary | `#48502F` | <div style="width:20px;height:20px;background:#48502F;border:1px solid #48502F;"></div> |
-| Accent    | `#F7EFDA` | <div style="width:20px;height:20px;background:#F7EFDA;border:1px solid #F7EFDA;"></div> |
+![Primary](https://img.shields.io/badge/Primary%20Color-7A824F?style=for-the-badge)
+![Secondary](https://img.shields.io/badge/Secondary%20Color-48502F?style=for-the-badge)
+![Accent](https://img.shields.io/badge/Accent-F7EFDA?style=for-the-badge)
 
 ### Project Structure
 
@@ -189,3 +187,8 @@ Then open `http://localhost:5173/` to see HealthiMart in action!
 [Readme Template 2 - Louis3797](https://github.com/Louis3797/awesome-readme-template?tab=readme-ov-file)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+[Next-url]: https://nextjs.org/
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/
