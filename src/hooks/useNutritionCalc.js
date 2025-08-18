@@ -46,18 +46,16 @@ export function useNutritionCalc(basket) {
     const macroRatios = compareToMacros(macros);
     const microRatios = compareToMicros(micros);
 
-    //compute deficits
-    const macrosRemaining = {
-      carbs: Math.max(0, RDI.carbs - macros.carbs),
-      protein: Math.max(0, RDI.protein - macros.protein),
-      fat: Math.max(0, RDI.fat - macros.fat),
-    };
-    const microsRemaining = {
-      cholesterol: Math.max(0, RDI.cholesterol - micros.cholesterol),
-      sodium: Math.max(0, RDI.sodium - micros.sodium),
-      potassium: Math.max(0, RDI.potassium - micros.potassium),
-      fiber: Math.max(0, RDI.fiber - micros.fiber),
-      sugar: Math.max(0, RDI.sugar - micros.sugar),
+    //compute deficits/excess amounts
+    const nutrientDiff = {
+      carbs: Math.abs(RDI.carbs - macros.carbs),
+      protein: Math.abs(RDI.protein - macros.protein),
+      fat: Math.abs(RDI.fat - macros.fat),
+      cholesterol: Math.abs(RDI.cholesterol - micros.cholesterol),
+      sodium: Math.abs(RDI.sodium - micros.sodium),
+      potassium: Math.abs(RDI.potassium - micros.potassium),
+      fiber: Math.abs(RDI.fiber - micros.fiber),
+      sugar: Math.abs(RDI.sugar - micros.sugar),
     };
 
     return {
@@ -66,8 +64,7 @@ export function useNutritionCalc(basket) {
       micros,
       macroRatios,
       microRatios,
-      macrosRemaining,
-      microsRemaining,
+      nutrientDiff,
     };
   }, [basket]);
 }

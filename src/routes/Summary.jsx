@@ -10,7 +10,8 @@ import "../styles/Summary.css";
 
 export default function Summary() {
   const { basket } = useMealContext();
-  const { macros, micros, macroRatios, microRatios } = useNutritionCalc(basket);
+  const { macros, micros, macroRatios, microRatios, nutrientDiff } =
+    useNutritionCalc(basket);
   const itemCount = basket.length;
 
   const combinedName = useMemo(() => {
@@ -80,11 +81,22 @@ export default function Summary() {
     "Magnesium, often overlooked, is involved in over 300 biochemical reactions in the body, including muscle and nerve function, blood glucose control, and blood pressure regulation.",
   ];
 
+  const suggestions = {
+    carbs: "Consider whole grains, fruits, and vegetables for steady energy.",
+    protein: "Include lean meats, beans, or tofu to support muscle repair.",
+    fat: "Incorporate healthy fats like avocados, nuts, and olive oil.",
+    cholesterol: "Limit high-cholesterol foods; opt for plant-based proteins.",
+    sodium: "Reduce salty snacks; season with herbs or citrus instead of salt.",
+    potassium: "Add bananas, sweet potatoes, or spinach for potassium balance.",
+    fiber: "Eat more legumes, whole grains, and leafy greens for digestion.",
+    sugar:
+      "Cut back on sugary drinks and desserts; choose natural fruit instead.",
+  };
+  const largest = Object.keys(nutrientDiff).reduce((a, b) =>
+    nutrientDiff[a] > nutrientDiff[b] ? a : b
+  );
   const randomIndex = Math.floor(Math.random() * funFacts.length);
   const selectedFunFact = funFacts[randomIndex];
-
-  const suggestions =
-    "Consider adding more leafy greens to boost your vitamin intake or incorporating nuts for healthy fats.";
 
   return (
     <div className="summary-page">
@@ -176,7 +188,7 @@ export default function Summary() {
           <p className="fun-fact-text">{selectedFunFact}</p>
 
           <h2 className="suggestions-title">Suggestions</h2>
-          <p className="suggestions-text">{suggestions}</p>
+          <p className="suggestions-text">{suggestions[largest]}</p>
         </div>
         <div className="choices-section">
           {bestItem && (
