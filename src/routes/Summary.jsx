@@ -127,6 +127,7 @@ export default function Summary() {
           <h2 className="nutrients-summary-title">Nutrients Summary</h2>
           <div className="nutrients-columns">
             <div className="nutrients-column">
+              <br></br>
               <h3 className="nutrient-category">Macronutrients</h3>
               <p className="nutrient-item">
                 Carbohydrates{" "}
@@ -146,7 +147,7 @@ export default function Summary() {
                   {formatGrams("", macros.fat)}
                 </span>
               </p>
-
+              <br></br>
               <h3 className="nutrient-category">Micronutrients</h3>
               <p className="nutrient-item">
                 Cholesterol

@@ -105,6 +105,10 @@ export default function Basket() {
                 {nutrientsList.totalCalories} kcal
               </span>
             </div>
+          </div>
+          <div className="nutrient-rows-container">
+          <br></br>
+          <h3 className="nutrient-category-title">Macronutrients</h3>
             <div className="nutrient-row">
               <span className="nutrient-label">Carbohydrates</span>
               <span className="nutrient-value">
@@ -118,28 +122,19 @@ export default function Basket() {
               </span>
             </div>
             <div className="nutrient-row">
-              <span className="nutrient-label">Fats</span>
+              <span className="nutrient-label">Fat</span>
               <span className="nutrient-value">
                 {formatGrams("Fats", nutrientsList.fats)}
               </span>
             </div>
+          </div>
+          <div className="nutrient-rows-container">
+            <br></br>
+            <h3 className="nutrient-category-title">Micronutrients</h3>
             <div className="nutrient-row">
               <span className="nutrient-label">Cholesterol</span>
               <span className="nutrient-value">
                 {formatGrams("Cholesterol", nutrientsList.cholesterol)}
-              </span>
-            </div>
-            <div className="nutrient-row">
-              <span className="nutrient-label">Fibre</span>
-              <span className="nutrient-value">
-                {formatGrams("Fiber", nutrientsList.fibre)}
-              </span>{" "}
-              {/* Ensure 'Fiber' is handled by formatGrams */}
-            </div>
-            <div className="nutrient-row">
-              <span className="nutrient-label">Sugars</span>
-              <span className="nutrient-value">
-                {formatGrams("Sugar", nutrientsList.sugars)}
               </span>
             </div>
             <div className="nutrient-row">
@@ -152,6 +147,18 @@ export default function Basket() {
               <span className="nutrient-label">Potassium</span>
               <span className="nutrient-value">
                 {formatGrams("Potassium", nutrientsList.potassium)}
+              </span>
+            </div>
+            <div className="nutrient-row">
+              <span className="nutrient-label">Fiber</span>
+              <span className="nutrient-value">
+                {formatGrams("Fiber", nutrientsList.fibre)}
+              </span>{" "}
+            </div>
+            <div className="nutrient-row">
+              <span className="nutrient-label">Sugar</span>
+              <span className="nutrient-value">
+                {formatGrams("Sugar", nutrientsList.sugars)}
               </span>
             </div>
           </div>

@@ -83,16 +83,6 @@
   text-decoration: none;
 }
 
-.meal-naming-section {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-  max-width: 1200px;
-  margin-bottom: 30px;
-  gap: 15px;
-}
-
 .meal-name-label {
   color: #000;
   font-feature-settings: "liga" off, "clig" off;
@@ -106,20 +96,6 @@
   flex-shrink: 0;
 }
 
-.meal-name-input {
-  width: 725px;
-  height: 54px;
-  flex-shrink: 0;
-  border-radius: 24px;
-  border: 2px solid #ececec;
-  background: #fafaf5;
-  padding: 0 20px;
-  font-size: 18px;
-  box-sizing: border-box;
-  flex-grow: 1;
-  max-width: 725px;
-}
-
 .content-grid {
   display: flex;
   justify-content: center;
@@ -131,7 +107,7 @@
 
 .nutrients-summary-box {
   width: auto;
-  height: 428px;
+  height: auto;
   flex-shrink: 0;
   border-radius: 24px;
   border: 2px solid #e6e6e6;
