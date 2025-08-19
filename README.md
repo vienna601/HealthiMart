@@ -160,7 +160,7 @@ Then open `http://localhost:5173/` to see HealthiMart in action!
 | Team member | Roles |
 |------------|----------|
 | Vienna | Food Rack, Basket, Summary, Backend/food data, hooks/utils/context|
-| Angela  | Home, Menu, Summary, UI/UX Design, styling and aesthetics |
+| Angela  | Home, Menu, Basket, Summary, UI/UX Design, styling and aesthetics |
 
 <p align="right">(<a href="#HealthiMart">back to top</a>)</p>
 
