@@ -169,7 +169,7 @@ export default function Summary() {
               </p>
               <p className="nutrient-item">Minerals</p>
               <p className="nutrient-item-sub">
-                Calcium{" "}
+                Sodium{" "}
                 <span className="nutrient-value">
                   {formatGrams("Sodium", micros.sodium)}
                 </span>
