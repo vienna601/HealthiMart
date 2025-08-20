@@ -120,14 +120,13 @@
 }
 
 .nutrients-summary-title {
-  color: #000;
-  font-feature-settings: "liga" off, "clig" off;
   font-family: "Inter", sans-serif;
   font-size: 25px;
-  font-style: normal;
   font-weight: 600;
-  line-height: 130%;
-  margin: 0 0 20px 0;
+  color: #000;
+  margin-top: 5px;
+  margin-bottom: 1rem;
+  text-align: left;
 }
 
 .nutrients-columns {
@@ -140,13 +139,12 @@
 .nutrients-column {
   display: flex;
   flex-direction: column;
-  flex-basis: 50%;
-  align-items: flex-start;
+  gap: 0.75rem; /* Space between nutrient rows */
+  margin-bottom: auto; /* Pushes buttons to the bottom */
 }
 
 .nutrient-category {
   color: #000;
-  font-feature-settings: "liga" off, "clig" off;
   font-family: "Inter", sans-serif;
   font-size: 20px;
   font-style: normal;
@@ -157,7 +155,6 @@
 
 .nutrient-item {
   color: #000;
-  font-feature-settings: "liga" off, "clig" off;
   font-family: "Inter", sans-serif;
   font-size: 16px;
   font-style: normal;
@@ -172,7 +169,6 @@
 
 .nutrient-item-sub {
   color: #000;
-  font-feature-settings: "liga" off, "clig" off;
   font-family: "Inter", sans-serif;
   font-size: 16px;
   font-style: normal;
@@ -200,7 +196,7 @@
 
 .fun-fact-suggestions-box {
   width: 347px;
-  height: 428px;
+  height: auto;
   flex-shrink: 0;
   border-radius: 24px;
   border: 2px solid #ececec;
@@ -268,15 +264,14 @@
 }
 
 .choice-card {
-  width: 347px;
-  height: 428px;
+  width: 320px;
+  height: auto;
   flex-shrink: 0;
   border-radius: 24px;
   border: 2px solid #ececec;
   background: #fafaf5;
   padding: 30px;
   box-sizing: border-box;
-
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -284,7 +279,7 @@
 }
 
 .choice-img {
-  width: 230px;
+  width: 256px;
   height: auto;
   border-radius: 10px;
   margin-bottom: 30px;
@@ -311,6 +306,14 @@
   font-weight: 400;
   line-height: 130%;
   margin: 0 0 30px 0;
+}
+
+.choice-info {
+  width: 250px;
+  color: #000;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 .summary-footer-buttons {

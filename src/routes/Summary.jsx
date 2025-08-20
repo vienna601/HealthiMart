@@ -6,6 +6,7 @@ import { compareToMacros, compareToMicros } from "../utils/nutrientHelpers.js";
 import StarRating from "../components/StarRating.jsx";
 import HeaderBar from "../components/HeaderBar.jsx";
 import { formatGrams } from "../utils/nutrientHelpers.js";
+import NutrientList from "../components/NutrientList.jsx";
 import "../styles/Summary.css";
 
 export default function Summary() {
@@ -92,9 +93,11 @@ export default function Summary() {
     sugar:
       "Cut back on sugary drinks and desserts; choose natural fruit instead.",
   };
+  //find largest excess/deficit for suggestions
   const largest = Object.keys(nutrientDiff).reduce((a, b) =>
     nutrientDiff[a] > nutrientDiff[b] ? a : b
   );
+  //display random fun fact
   const randomIndex = Math.floor(Math.random() * funFacts.length);
   const selectedFunFact = funFacts[randomIndex];
 
@@ -184,13 +187,6 @@ export default function Summary() {
           </div>
         </div>
 
-        <div className="fun-fact-suggestions-box">
-          <h2 className="fun-fact-title">Fun Fact</h2>
-          <p className="fun-fact-text">{selectedFunFact}</p>
-
-          <h2 className="suggestions-title">Suggestions</h2>
-          <p className="suggestions-text">{suggestions[largest]}</p>
-        </div>
         <div className="choices-section">
           {bestItem && (
             <div className="choice-card">
@@ -200,12 +196,24 @@ export default function Summary() {
                 alt={bestItem.name}
                 className="choice-img"
               />
-              <div className="choice-info">
+              <div>
                 <p className="choice-text">
                   <b>{bestItem.name}</b>
                   <br />
                   {bestItem.calories} kcal
                 </p>
+                <div className="choice-info">
+                  <NutrientList
+                    nutrients={bestItem.macros}
+                    compareFn={compareToMacros}
+                  />
+                </div>
+                <div className="choice-info">
+                  <NutrientList
+                    nutrients={bestItem.micros}
+                    compareFn={compareToMicros}
+                  />
+                </div>
               </div>
             </div>
           )}
@@ -217,15 +225,34 @@ export default function Summary() {
                 alt={worstItem.name}
                 className="choice-img"
               />
-              <div className="choice-info">
+              <div>
                 <p className="choice-text">
                   <b>{worstItem.name}</b>
                   <br />
                   {worstItem.calories} kcal
                 </p>
+                <div className="choice-info">
+                  <NutrientList
+                    nutrients={worstItem.macros}
+                    compareFn={compareToMacros}
+                  />
+                </div>
+                <div className="choice-info">
+                  <NutrientList
+                    nutrients={worstItem.micros}
+                    compareFn={compareToMicros}
+                  />
+                </div>
               </div>
             </div>
           )}
+        </div>
+        <div className="fun-fact-suggestions-box">
+          <h2 className="fun-fact-title">Fun Fact</h2>
+          <p className="fun-fact-text">{selectedFunFact}</p>
+
+          <h2 className="suggestions-title">Suggestions</h2>
+          <p className="suggestions-text">{suggestions[largest]}</p>
         </div>
       </div>
     </div>
