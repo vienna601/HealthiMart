@@ -8,6 +8,7 @@
   background-color: #f0f4f8;
   box-sizing: border-box;
   position: relative;
+  width: 100%;
 }
 
 .summary-header {
@@ -97,16 +98,18 @@
 }
 
 .content-grid {
-  display: flex;
+  display: grid;
+  flex-direction: row;
   justify-content: center;
   align-items: flex-start;
   width: 100%;
   max-width: 1200px;
   gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .nutrients-summary-box {
-  width: auto;
+  width: 100%;
   height: auto;
   flex-shrink: 0;
   border-radius: 24px;
@@ -195,7 +198,7 @@
 }
 
 .fun-fact-suggestions-box {
-  width: 347px;
+  width: 100%;
   height: auto;
   flex-shrink: 0;
   border-radius: 24px;
@@ -203,11 +206,6 @@
   background: #fafaf5;
   padding: 30px;
   box-sizing: border-box;
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
 }
 
 .fun-fact-title {
@@ -261,16 +259,20 @@
   display: flex;
   gap: 1.5rem;
   align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  width: 100%;
 }
 
 .choice-card {
-  width: 320px;
   height: auto;
-  flex-shrink: 0;
+  width: 100%;
+  max-width: 520px;
   border-radius: 24px;
   border: 2px solid #ececec;
   background: #fafaf5;
   padding: 30px;
+  overflow: clip;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -279,7 +281,8 @@
 }
 
 .choice-img {
-  width: 215px;
+  width: 100%;
+  max-width: 215px;
   height: auto;
   border-radius: 10px;
   margin-bottom: 30px;
@@ -309,7 +312,7 @@
 }
 
 .choice-info {
-  width: 250px;
+  width: 200px;
   color: #000;
   font-family: "Inter", sans-serif;
   display: flex;
@@ -345,4 +348,37 @@
   text-decoration: none;
   width: auto;
   min-width: 220px;
+}
+
+/* 2 columns on medium screens */
+@media (max-width: 1100px) {
+  .content-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Single column on small screens */
+@media (max-width: 700px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Stack the two cards when narrow */
+@media (max-width: 700px) {
+  .choices-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tweak the huge title size so it doesn’t overflow */
+@media (max-width: 900px) {
+  .summary-title {
+    font-size: 40px;
+  }
+}
+@media (max-width: 600px) {
+  .summary-title {
+    font-size: 32px;
+  }
 }
