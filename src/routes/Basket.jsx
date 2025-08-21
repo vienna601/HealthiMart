@@ -74,9 +74,10 @@ export default function Basket() {
 
                   {/* info */}
                   <div className="basket-item-info">
-                    <h4 className="item-name">{item.name}</h4>
-                    <p className="item-calories">{item.calories} kcal</p>
-
+                    <p className="item-headline">
+                      <span className="item-name">{item.name}</span>
+                      <span>{item.calories} kcal</span>
+                    </p>
                     <div className="item-nutrients">
                       <NutrientList
                         nutrients={item.macros}
@@ -90,6 +91,9 @@ export default function Basket() {
                       />
                     </div>
                   </div>
+                  <p className="item-serving">
+                    Serving size: {item.servingSize} g
+                  </p>
                 </div>
               ))}
             </div>
@@ -107,8 +111,8 @@ export default function Basket() {
             </div>
           </div>
           <div className="nutrient-rows-container">
-          <br></br>
-          <h3 className="nutrient-category-title">Macronutrients</h3>
+            <br></br>
+            <h3 className="nutrient-category-title">Macronutrients</h3>
             <div className="nutrient-row">
               <span className="nutrient-label">Carbohydrates</span>
               <span className="nutrient-value">

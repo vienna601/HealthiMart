@@ -5,6 +5,7 @@ export const items = Object.entries(foodMetadata).map(([name, meta], i) => ({
   name,
   group: meta.group,
   calories: meta.calories,
+  servingSize: meta["serving size"],
   macros: meta.macros,
   micros: meta.micros,
   funFact: meta.funFact,

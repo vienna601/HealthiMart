@@ -28,12 +28,12 @@
 /* === FULL-COVER HOVER CARD === */
 .food-item-card__hovercard {
   position: absolute;
-  inset: -65px; /* extend to fit all the info */
+  inset: -75px; /* extend to fit all the info */
   background: #fafaf5;
   font-family: "Inter";
   border-radius: 12px;
   box-shadow: 0 16px 30px rgba(0, 0, 0, 0.18);
-  padding: 12px;
+  padding: 15px;
   z-index: 100; /* above neighboring tiles */
   opacity: 0; /* hidden by default */
   transform: translateY(4px) scale(1);
@@ -48,7 +48,6 @@
   pointer-events: auto; /* allow clicks inside the card */
 }
 
-/* Optional: tighter text styling */
 .popup__title {
   margin: 6px 0 4px;
   font-weight: 700;
@@ -58,4 +57,19 @@
   margin: 0 0 8px;
   font-size: 0.85rem;
   line-height: 1.35;
+}
+
+.serving_size {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+  margin-top: -0.05rem;
+}
+.serving_size_text {
+  color: #dc2626;
+  margin: 6px 0 4px;
+  font-size: 0.85rem;
+  line-height: 1.35;
+  margin-bottom: 0.25rem;
 }

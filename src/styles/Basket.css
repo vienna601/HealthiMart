@@ -171,14 +171,21 @@
   display: flex;
   flex-direction: column;
 }
+.item-headline {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+}
 .item-name {
-  margin: 0;
+  margin-top: -0.1rem;
   font-size: 1rem;
   font-weight: 500;
 }
-.item-calories {
-  margin: 0.5rem 0;
+.item-serving {
   font-size: 0.875rem;
+  margin-right: 0.7rem;
+  margin-top: -0.3rem;
   text-align: right;
   color: #4a5568;
 }
