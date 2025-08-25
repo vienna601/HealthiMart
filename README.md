@@ -7,18 +7,23 @@ HealthiMart is an interactive educational project designed to make nutrition eng
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#demo">Demo</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#color-codes">Color Codes</a></li>
+        <li><a href="#project-structure">Project Structure</a></li>
+      </ul>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
+        <li><a href="#usage">Usage</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
+    <li><a href="#contributors">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
@@ -26,7 +31,7 @@ HealthiMart is an interactive educational project designed to make nutrition eng
 
 ## About The Project
 
-### Built with:
+### Built With
 * [![Next][Next.js]][Next-url] 
 * [![React][React.js]][React-url]
 * [![Javascript][Javascript.js]][Javascript-url]
