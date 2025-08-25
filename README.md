@@ -27,7 +27,11 @@ HealthiMart is an interactive educational project designed to make nutrition eng
 ## About The Project
 
 ### Built with:
-[![Next][Next.js]][Next-url] [![React][React.js]][React-url]
+* [![Next][Next.js]][Next-url] 
+* [![React][React.js]][React-url]
+* [![Javascript][Javascript.js]][Javascript-url]
+* [![CSS][CSS.com]][CSS-url]
+* [![HTML][HTML.com]][HTML-url]
 
 ### Demo
 
@@ -210,3 +214,9 @@ Project Link: https://github.com/vienna601/HealthiMart
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
+[Javascript.js]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000
+[Javascript-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+[CSS.com]: https://img.shields.io/badge/CSS-639?style=for-the-badge&logo=css&logoColor=fff
+[CSS-url]: https://developer.mozilla.org/en-US/docs/Web/CSS
+[HTML.com]: https://img.shields.io/badge/HTML-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white
+[HTML-url]: https://developer.mozilla.org/en-US/docs/Web/HTML
